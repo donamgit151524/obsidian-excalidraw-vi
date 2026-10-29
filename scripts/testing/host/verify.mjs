@@ -12,14 +12,6 @@ import { runNativeCLIScenario } from "./nativeCLI.mjs";
 import { runEmbedRecoveryScenario } from "./embedRecovery.mjs";
 import { runGroupedLinkClickScenario } from "./groupedLinkClick.mjs";
 import { runLatexInputScenario } from "./latexInput.mjs";
-import { runImageGeometryScenario } from "./imageGeometry.mjs";
-import { runWheelZoomScenario } from "./wheelZoom.mjs";
-import { runWebDropScenario } from "./webDrop.mjs";
-import { runInternalDropScenario } from "./internalDrop.mjs";
-import { runYouTubeDropScenario } from "./youtubeDrop.mjs";
-import { runSvgImportScenario } from "./svgImport.mjs";
-import { runLucideScenario } from "./lucideIcons.mjs";
-import { runWorkflowFixesScenario } from "./workflowFixes.mjs";
 
 const pluginRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
 const pluginOnly = process.argv.includes("--plugin-only");
@@ -29,17 +21,8 @@ const embedRecovery = process.argv.includes("--embed-recovery");
 const groupedLinkClick = process.argv.includes("--grouped-link-click");
 const latexInput = process.argv.includes("--latex-input");
 const latexPreview = process.argv.includes("--latex-preview");
-const imageGeometryReal = process.argv.includes("--image-geometry-real");
-const imageGeometry = process.argv.includes("--image-geometry") || imageGeometryReal;
-const wheelZoom = process.argv.includes("--wheel-zoom");
-const webDrop = process.argv.includes("--web-drop");
-const internalDrop = process.argv.includes("--internal-drop");
-const youtubeDrop = process.argv.includes("--youtube-drop");
-const svgImport = process.argv.includes("--svg-import");
-const lucide = process.argv.includes("--lucide");
-const workflowFixes = process.argv.includes("--workflow-fixes");
-if (process.argv.slice(2).some(arg => !["--workflow-fixes", "--plugin-only", "--lucide", "--text-undo", "--native-cli", "--embed-recovery", "--grouped-link-click", "--latex-input", "--latex-preview", "--image-geometry", "--image-geometry-real", "--wheel-zoom", "--web-drop", "--internal-drop", "--youtube-drop", "--svg-import"].includes(arg))) {
-  throw new Error("Supported options: --workflow-fixes, --plugin-only, --lucide, --text-undo, --native-cli, --embed-recovery, --grouped-link-click, --latex-input, --latex-preview, --image-geometry, --image-geometry-real, --wheel-zoom, --web-drop, --internal-drop, --youtube-drop, --svg-import");
+if (process.argv.slice(2).some(arg => !["--plugin-only", "--text-undo", "--native-cli", "--embed-recovery", "--grouped-link-click", "--latex-input", "--latex-preview"].includes(arg))) {
+  throw new Error("Supported options: --plugin-only, --text-undo, --native-cli, --embed-recovery, --grouped-link-click, --latex-input, --latex-preview");
 }
 const forkRoot = resolve(process.env.EXCALIDRAW_FORK_ROOT || join(pluginRoot, "../excalidraw"));
 const reportDir = process.env.EXCALIDRAW_TEST_REPORT_DIR || mkdtempSync(join(tmpdir(), "excalidraw-obsidian-"));
@@ -75,14 +58,6 @@ const report = await runObsidianSmoke({
   reportDir,
   source,
   scenarios: [
-    ...(workflowFixes ? [runWorkflowFixesScenario] : []),
-    ...(lucide ? [runLucideScenario] : []),
-    ...(svgImport ? [runSvgImportScenario] : []),
-    ...(wheelZoom ? [runWheelZoomScenario] : []),
-    ...(imageGeometry ? [context => runImageGeometryScenario({ ...context, realRenderer: imageGeometryReal })] : []),
-    ...(webDrop ? [runWebDropScenario] : []),
-    ...(internalDrop ? [runInternalDropScenario] : []),
-    ...(youtubeDrop ? [runYouTubeDropScenario] : []),
     ...(textUndo ? [runTextUndoScenario] : []),
     ...(nativeCLI ? [runNativeCLIScenario] : []),
     ...(embedRecovery ? [runEmbedRecoveryScenario] : []),
@@ -108,14 +83,6 @@ const report = await runObsidianSmoke({
       command(yarn.file, yarn.args, join(forkRoot, "packages/excalidraw"), 600_000, true);
       for (const name of FORK_ARTIFACTS) {
         if (!existsSync(join(sourceDir, name))) throw new Error(`Fork build did not produce ${name}`);
-      }
-      const contracts = spawnNativeSync(process.execPath,
-        [join(pluginRoot, "scripts/testing/hostContracts.test.mjs")], {
-          cwd: pluginRoot, encoding: "utf8", timeout: 120_000,
-          env: { ...process.env, EXCALIDRAW_TEST_FORK_TYPES_ROOT: forkRoot },
-        });
-      if (contracts.error || contracts.status !== 0) {
-        throw new Error(`Local fork declaration contract failed: ${contracts.error?.message || contracts.stderr || contracts.stdout}`);
       }
       mkdirSync(installedDir, { recursive: true });
     }

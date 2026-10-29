@@ -13,6 +13,7 @@ import { minify } from 'uglify-js';
 import json from '@rollup/plugin-json';
 import { parseEnv } from 'node:util';
 import { buildReactRuntime } from './scripts/buildReactRuntime.mjs';
+import { injectCanvasVietnamese } from './scripts/canvas-locale.mjs';
 
 function compressDeflateBase64(code) {
   // Compress using Node's native zlib at maximum compression
@@ -51,7 +52,7 @@ console.log(`Running: ${process.env.NODE_ENV}; isProd: ${isProd}; isLib: ${isLib
 // Add non-English locales here to embed them as compressed payloads in main.js.
 // When adding a locale file:
 // 1) add its code to this list, 2) build once, 3) if build fails because the locale
-const LANGUAGES = ['ru', 'zh-cn', 'zh-tw', 'es']; //english is not compressed as it is always loaded by default
+const LANGUAGES = ['ru', 'zh-cn', 'zh-tw', 'es', 'vi']; //english is not compressed as it is always loaded by default
 
 function trimLastSemicolon(input) {
   if (input.endsWith(";")) {
@@ -87,12 +88,12 @@ function compressLanguageFile(lang) {
   return compressDeflateBase64(minifyCode(`x = ${content};`));
 }
 
-const excalidrawSource = isLib ? "" : fs.readFileSync(
+const excalidrawSource = isLib ? "" : injectCanvasVietnamese(fs.readFileSync(
   isProd
     ? "./node_modules/@zsviczian/excalidraw/dist/obsidian/excalidraw.production.min.js"
     : "./node_modules/@zsviczian/excalidraw/dist/obsidian/excalidraw.development.js",
   "utf8",
-);
+));
 const excalidraw_pkg = isLib
   ? ""
   : isProd
@@ -336,10 +337,6 @@ const BUILD_CONFIG = {
     ...(isProd ? [
       terser({
         toplevel: false,
-        // Shorten Rollup's module-level bindings without enabling top-level
-        // dead-code elimination or changing public object properties. React's
-        // require binding must retain its name for the bootstrap insertion below.
-        mangle: { toplevel: true, reserved: ['React'] },
         compress: { passes: 2 },
         format: {
           comments: false, // Remove all comments

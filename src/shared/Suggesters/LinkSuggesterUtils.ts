@@ -1,3 +1,4 @@
+import { t } from "src/lang/helpers";
 import { App, FuzzyMatch, prepareFuzzySearch, setIcon } from "obsidian";
 import { LinkSuggestion } from "src/types/types";
 import {
@@ -203,7 +204,7 @@ export const renderHeadingSuggestionRow = (
   const contentEl = itemEl.createDiv("suggestion-content");
   const titleEl = contentEl.createDiv("suggestion-title");
   if (!item) {
-    titleEl.setText("No match");
+    titleEl.setText(t("UI_EXTRA_040"));
     itemEl.addClass("is-selected");
     return;
   }
@@ -226,7 +227,7 @@ export const renderParagraphSuggestionRow = (
   const contentEl = itemEl.createDiv("suggestion-content");
   const titleEl = contentEl.createDiv("suggestion-title");
   if (!item) {
-    titleEl.setText("No match");
+    titleEl.setText(t("UI_EXTRA_040"));
     itemEl.addClass("is-selected");
     return;
   }

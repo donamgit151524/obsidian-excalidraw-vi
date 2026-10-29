@@ -1,7 +1,7 @@
 import { ExcalidrawExtrasGateway } from "../utils/ExcalidrawExtrasGateway";
 import { ExcalidrawCLI } from "./managers/ExcalidrawCLI";
 import type { ExcalidrawCLIRequest, ExcalidrawCLIResult } from "src/types/excalidrawCliTypes";
-import type { ExactDrawingCreationOptions, PreparedDrawing } from "src/types/drawingCreationTypes";
+import type { ExactDrawingCreationOptions } from "src/types/drawingCreationTypes";
 import {
   TFile,
   Plugin,
@@ -31,7 +31,6 @@ import {
   EXPORT_TYPES,
   EXPORT_IMG_ICON_NAME,
   EXPORT_IMG_ICON,
-  LOCALE,
   setExcalidrawPlugin,
   DEVICE,
   setRootElementSize,
@@ -99,8 +98,6 @@ import { MonkeyPatchManager } from "./managers/MonkeyPatchManager";
 import ExcalidrawView from "../view/ExcalidrawView";
 import { ExcalidrawSidepanelView } from "../view/sidepanel/Sidepanel";
 import { CommandManager } from "./managers/CommandManager";
-import { LucideIconPicker } from "src/view/sidepanel/LucideIconPicker";
-import type { ObsidianExcalidrawHostAdapter } from "@zsviczian/excalidraw/types/excalidraw/obsidianExcalidrawHost";
 import { EventManager } from "./managers/EventManager";
 import { UniversalInsertFileModal } from "src/shared/Dialogs/UniversalInsertFileModal";
 import en from "src/lang/locale/en";
@@ -175,7 +172,6 @@ export default class ExcalidrawPlugin extends Plugin {
   private packageManager: PackageManager;
   private monkeyPatchManager: MonkeyPatchManager;
   private commandManager: CommandManager;
-  public lucidePicker: LucideIconPicker;
   private eventManager: EventManager;
   private settingsManager: PluginSettingsManager;
   private settingsTab: ExcalidrawSettingTab;
@@ -339,7 +335,7 @@ export default class ExcalidrawPlugin extends Plugin {
   }
 
   get locale() {
-    return LOCALE;
+    return this.settings?.uiLanguage === "en" ? "en" : "vi";
   }
 
   get window(): Window {
@@ -459,7 +455,7 @@ export default class ExcalidrawPlugin extends Plugin {
         this.onloadCheckForOnceOffSettingsUpdates(),
       );
     } catch (e) {
-      new Notice("Error loading plugin settings", 6000);
+      new Notice(t("UI_EXTRA_001"), 6000);
       console.error("Error loading plugin settings", e);
     }
     this.logStartupEvent("Settings loaded");
@@ -478,7 +474,7 @@ export default class ExcalidrawPlugin extends Plugin {
       //Licat: Are you registering your post processors in onLayoutReady? You should register them in onload instead
       this.addMarkdownPostProcessor();
     } catch (e) {
-      new Notice("Error adding Markdown post processor", 6000);
+      new Notice(t("UI_EXTRA_002"), 6000);
       console.error("Error adding Markdown post processor", e);
     }
     this.logStartupEvent("Markdown post processor added");
@@ -516,13 +512,12 @@ export default class ExcalidrawPlugin extends Plugin {
     this.observerManager = new ObserverManager(this);
     this.monkeyPatchManager = new MonkeyPatchManager(this);
     this.commandManager = new CommandManager(this);
-    this.lucidePicker = new LucideIconPicker(this);
     this.stencilLibraryManager = new StencilLibraryManager(this);
 
     try {
       initCompressionWorker();
     } catch (e) {
-      new Notice("Error initializing compression worker", 6000);
+      new Notice(t("UI_EXTRA_003"), 6000);
       console.error("Error initializing compression worker", e);
     }
     this.logStartupEvent("Compression worker initialized");
@@ -530,7 +525,7 @@ export default class ExcalidrawPlugin extends Plugin {
     try {
       this.excalidrawConfig = new ExcalidrawConfig(this);
     } catch (e) {
-      new Notice("Error initializing Excalidraw config", 6000);
+      new Notice(t("UI_EXTRA_004"), 6000);
       console.error("Error initializing Excalidraw config", e);
     }
     this.logStartupEvent("Excalidraw config initialized");
@@ -542,7 +537,7 @@ export default class ExcalidrawPlugin extends Plugin {
       //https://github.com/mgmeyers/obsidian-kanban/blob/44118e25661bff9ebfe54f71ae33805dc88ffa53/src/main.ts#L267
       this.monkeyPatchManager.initialize();
     } catch (e) {
-      new Notice("Error registering monkey patches", 6000);
+      new Notice(t("UI_EXTRA_005"), 6000);
       console.error("Error registering monkey patches", e);
     }
     this.logStartupEvent("Monkey patches registered");
@@ -550,7 +545,7 @@ export default class ExcalidrawPlugin extends Plugin {
     try {
       this.stylesManager = new StylesManager(this);
     } catch (e) {
-      new Notice("Error initializing styles manager", 6000);
+      new Notice(t("UI_EXTRA_006"), 6000);
       console.error("Error initializing styles manager", e);
     }
     this.logStartupEvent("Styles manager initialized");
@@ -560,7 +555,7 @@ export default class ExcalidrawPlugin extends Plugin {
     try {
       this.scriptEngine = new ScriptEngine(this);
     } catch (e) {
-      new Notice("Error initializing script engine", 6000);
+      new Notice(t("UI_EXTRA_007"), 6000);
       console.error("Error initializing script engine", e);
     }
     this.logStartupEvent("Script engine initialized");
@@ -570,7 +565,7 @@ export default class ExcalidrawPlugin extends Plugin {
     try {
       void getImageCache().initializeDB(this);
     } catch (e) {
-      new Notice("Error initializing image cache", 6000);
+      new Notice(t("UI_EXTRA_008"), 6000);
       console.error("Error initializing image cache", e);
     }
     this.logStartupEvent("Image cache initialized");
@@ -580,7 +575,7 @@ export default class ExcalidrawPlugin extends Plugin {
       await switchToExcalidraw(this.app);
       this.switchToExcalidrawAfterLoad();
     } catch (e) {
-      new Notice("Error switching views to Excalidraw", 6000);
+      new Notice(t("UI_EXTRA_009"), 6000);
       console.error("Error switching views to Excalidraw", e);
     }
     this.logStartupEvent("Switched to Excalidraw views");
@@ -606,7 +601,7 @@ export default class ExcalidrawPlugin extends Plugin {
         }
       }
     } catch (e) {
-      new Notice("Error opening release notes", 6000);
+      new Notice(t("UI_EXTRA_010"), 6000);
       console.error("Error opening release notes", e);
     }
     this.logStartupEvent("Release notes opened");
@@ -621,7 +616,7 @@ export default class ExcalidrawPlugin extends Plugin {
     try {
       void this.runStartupScript();
     } catch (e) {
-      new Notice("Error running startup script", 6000);
+      new Notice(t("UI_EXTRA_011"), 6000);
       console.error("Error running startup script", e);
     }
     this.logStartupEvent("Startup script run");
@@ -630,7 +625,7 @@ export default class ExcalidrawPlugin extends Plugin {
       this.editorHandler = new EditorHandler(this);
       this.editorHandler.setup();
     } catch (e) {
-      new Notice("Error setting up editor handler", 6000);
+      new Notice(t("UI_EXTRA_012"), 6000);
       console.error("Error setting up editor handler", e);
     }
     this.logStartupEvent("Editor handler initialized");
@@ -640,7 +635,7 @@ export default class ExcalidrawPlugin extends Plugin {
     try {
       this.registerEditorSuggest(new FieldSuggester(this));
     } catch (e) {
-      new Notice("Error registering editor suggester", 6000);
+      new Notice(t("UI_EXTRA_013"), 6000);
       console.error("Error registering editor suggester", e);
     }
     this.logStartupEvent("Editor suggester registered");
@@ -648,7 +643,7 @@ export default class ExcalidrawPlugin extends Plugin {
     try {
       void this.setPropertyTypes();
     } catch (e) {
-      new Notice("Error setting up property types", 6000);
+      new Notice(t("UI_EXTRA_014"), 6000);
       console.error("Error setting up property types", e);
     }
     this.logStartupEvent("Property types set");
@@ -844,7 +839,7 @@ export default class ExcalidrawPlugin extends Plugin {
         keepOriginal,
       );
     }
-    new Notice(`Converted ${files.length} files.`);
+    new Notice(t("UI_DYNAMIC_001").replace("{0}", String(files.length)));
   }
 
   /**
@@ -868,13 +863,13 @@ export default class ExcalidrawPlugin extends Plugin {
     }
     const f = this.app.vault.getFileByPath(path);
     if (!f || !(f instanceof TFile)) {
-      new Notice(`Startup script not found: ${path}`);
+      new Notice(t("UI_DYNAMIC_002").replace("{0}", String(path)));
       return;
     }
     try {
       await this.scriptEngine.executeStartupScript(f, this.ea);
     } catch (e) {
-      new Notice(`Error running startup script: ${e}`);
+      new Notice(t("UI_DYNAMIC_003").replace("{0}", String(e)));
     }
   }
 
@@ -1138,11 +1133,6 @@ export default class ExcalidrawPlugin extends Plugin {
     return await this.fileManager.getBlankDrawing();
   }
 
-  /** Internal UI preparation; existing EA/CLI callers supply deterministic initData. */
-  public prepareDrawing(): Promise<PreparedDrawing> {
-    return this.fileManager.prepareDrawing();
-  }
-
   public async createDrawing(
     filename: string,
     foldername?: string,
@@ -1199,11 +1189,6 @@ export default class ExcalidrawPlugin extends Plugin {
     foldername?: string,
     initData?: string,
   ): Promise<string> {
-    if (initData === undefined) {
-      const prepared = await this.fileManager.prepareDrawing();
-      if (prepared.kind === "cancel") return "";
-      initData = prepared.data;
-    }
     const file = await this.createDrawing(filename, foldername, initData);
     this.fileManager.openDrawing(file, location, true, undefined, true);
     return file.path;
@@ -1440,8 +1425,7 @@ export default class ExcalidrawPlugin extends Plugin {
 
   //used by obsidianUtils in the Excalidraw Pacakge
   //aweful coding, but does the job
-  public runAction(action: Parameters<ObsidianExcalidrawHostAdapter["runAction"]>[0], editorId?: string) {
-    if (action === "lucide") { this.lucidePicker.openForEditor(editorId); return; }
+  public runAction(action: "anyFile" | "LaTeX" | "card") {
     if (!this.activeExcalidrawView) {
       return;
     }

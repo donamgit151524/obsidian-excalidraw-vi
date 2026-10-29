@@ -41,7 +41,6 @@ import { Extension } from "@codemirror/state";
 import { FloatingModal } from "./FloatingModal";
 import { setSanitizedHtml } from "src/utils/htmlUtils";
 import { setStyle } from "src/utils/styleUtils";
-import { selectDrawingTemplate } from "./TemplatePrompt";
 
 /**
  * Minimal type for obsidian-latex-suite plugin.
@@ -1281,9 +1280,10 @@ export class NewFileActions extends Modal {
         if (!checks) {
           return;
         }
-        const prepared = await this.plugin.prepareDrawing();
-        if (prepared.kind === "cancel") return;
-        const f = await createFile(prepared.data, false);
+        const f = await createFile(
+          await this.plugin.getBlankDrawing(),
+          false,
+        );
         await sleep(200); //wait for metadata cache to update, so file opens as excalidraw
         this.openFile(f);
         this.close();
@@ -1544,6 +1544,13 @@ export const templatePromt = async (
   files: TFile[],
   app: App,
 ): Promise<TFile> => {
-  const result = await selectDrawingTemplate(files, app);
-  return result.kind === "template" ? result.file : null;
+  if (files.length === 1) {
+    return files[0];
+  }
+  return ((await linkPrompt(
+    files.map((f) => `[[${f.path}|${f.name}]]`).join(" "),
+    app,
+    undefined,
+    t("PROMPT_SELECT_TEMPLATE"),
+  )) ?? [null, null, null])[0];
 };

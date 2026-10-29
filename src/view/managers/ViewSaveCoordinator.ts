@@ -411,7 +411,7 @@ export class ViewSaveCoordinator {
         await this.view.loadSceneFiles();
       }
       if (!silent) {
-        new Notice("Save successful", 1000);
+        new Notice(t("UI_EXTRA_056"), 1000);
       }
     } catch (error: unknown) {
       errorlog({

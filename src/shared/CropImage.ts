@@ -1,3 +1,4 @@
+import { t } from "src/lang/helpers";
 import { ExcalidrawElement } from "@zsviczian/excalidraw/types/element/src/types";
 import type { BinaryFiles } from "@zsviczian/excalidraw/types/excalidraw/types";
 import { Notice } from "obsidian";
@@ -100,7 +101,7 @@ export class CropImage {
     const frames = this.elements.filter((el) => el.type === "frame");
     if (frames.length > 1) {
       new Notice(
-        "Multiple frames are not supported for image cropping. Discarding frames from mask.",
+        t("UI_EXTRA_027"),
       );
     }
     const images = this.imageEA
@@ -179,7 +180,7 @@ export class CropImage {
       this.imageEA.getElements().filter((el) => el.type === "image").length ===
       0
     ) {
-      new Notice("No image found. Cannot crop.");
+      new Notice(t("UI_EXTRA_028"));
       return;
     }
     const maskID = nanoid();

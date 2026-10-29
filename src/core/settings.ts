@@ -15,7 +15,7 @@ import {
   LOGO_EXCALIDRAW_MASTERY,
   setRootElementSize,
 } from "src/constants/constants";
-import { t } from "src/lang/helpers";
+import { setPluginLanguage, t } from "src/lang/helpers";
 import type ExcalidrawPlugin from "src/core/main";
 import { PreviewImageType } from "src/types/utilTypes";
 import { setDynamicStyle } from "src/utils/dynamicStyling";
@@ -330,6 +330,30 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
     this.destroyFontPickers();
     this.containerEl.addClass("excalidraw-settings");
     this.attachPersistenceWindowBlurHandler();
+  }
+
+  /** Share language persistence and refresh behavior across both settings layouts. */
+  private getLanguageSpec(): SettingSpec {
+    return {
+      name: t("UI_LANGUAGE_NAME"),
+      desc: t("UI_LANGUAGE_DESC"),
+      aliases: ["language", "ngôn ngữ", "vi", "en"],
+      control: {
+        type: "dropdown",
+        key: "uiLanguage",
+        options: [
+          { value: "vi", label: "Tiếng Việt (vi)" },
+          { value: "en", label: "English (en)" },
+        ],
+        after: (value) => setPluginLanguage(value),
+        reload: true,
+        afterUpdate: () => {
+          this.declarativePagePathsByTag = null;
+          this.refreshSettingsUI();
+          new Notice(t("UI_LANGUAGE_RESTART"), 10000);
+        },
+      },
+    };
   }
 
   private getSettingsLayoutSpec(): SettingSpec {
@@ -1287,6 +1311,7 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
     this.declarativeSettingsAdapter.beginBuild(registerBindings);
     return makeDescriptionsReusable([
       this.createDeclarativeUtilitiesDefinition("Root", true),
+      this.declarativeSettingsAdapter.toDefinition(this.getLanguageSpec()),
       this.declarativeSettingsAdapter.toDefinition(
         this.getSettingsLayoutSpec(),
       ),
@@ -1500,6 +1525,7 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
     this.attachPersistenceWindowBlurHandler();
 
     const contentSearcher = this.renderSearchSection();
+    this.buildSetting(containerEl, this.getLanguageSpec());
     this.renderSettingsUtilityBar(containerEl, () =>
       contentSearcher.copyContentAsMarkdown(),
     );
@@ -1917,11 +1943,11 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
           key: "autosaveIntervalDesktop",
           parse: "int",
           options: [
-            { value: 15000, label: "Very frequent (every 15 seconds)" },
-            { value: 30000, label: "Frequent (every 30 seconds)" },
-            { value: 60000, label: "Moderate (every 60 seconds)" },
-            { value: 300000, label: "Rare (every 5 minutes)" },
-            { value: 900000, label: "Practically never (every 15 minutes)" },
+            { value: 15000, label: t("UI_EXTRA_059") },
+            { value: 30000, label: t("UI_EXTRA_060") },
+            { value: 60000, label: t("UI_EXTRA_061") },
+            { value: 300000, label: t("UI_EXTRA_062") },
+            { value: 900000, label: t("UI_EXTRA_063") },
           ],
         },
       },
@@ -1934,11 +1960,11 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
           key: "autosaveIntervalMobile",
           parse: "int",
           options: [
-            { value: 10000, label: "Very frequent (every 10 seconds)" },
-            { value: 20000, label: "Frequent (every 20 seconds)" },
-            { value: 30000, label: "Moderate (every 30 seconds)" },
-            { value: 60000, label: "Rare (every 1 minute)" },
-            { value: 300000, label: "Practically never (every 5 minutes)" },
+            { value: 10000, label: t("UI_EXTRA_064") },
+            { value: 20000, label: t("UI_EXTRA_065") },
+            { value: 30000, label: t("UI_EXTRA_066") },
+            { value: 60000, label: t("UI_EXTRA_067") },
+            { value: 300000, label: t("UI_EXTRA_068") },
           ],
         },
       },
@@ -3749,7 +3775,7 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
       .setDesc(options.desc)
       .addText((text) =>
         text
-          .setPlaceholder(options.placeholder ?? "Enter a number")
+          .setPlaceholder(options.placeholder ?? t("UI_EXTRA_026"))
           .setValue(this.plugin.settings[options.key].toString())
           .onChange((value) => {
             const parsedValue = parseInt(value, 10);
@@ -4590,7 +4616,7 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
         aliases: ["Markdown embed width", "transclusion width"],
         key: "mdSVGwidth",
         emptyValue: 500,
-        placeholder: "Enter a number e.g. 500",
+        placeholder: t("UI_EXTRA_069"),
       }),
       this.createMarkdownDimensionDefinition({
         name: t("MD_TRANSCLUDE_HEIGHT_NAME"),
@@ -4598,7 +4624,7 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
         aliases: ["Markdown embed height", "transclusion maximum height"],
         key: "mdSVGmaxHeight",
         emptyValue: 800,
-        placeholder: "Enter a number e.g. 800",
+        placeholder: t("UI_EXTRA_070"),
       }),
       this.createMarkdownFontDefinition(),
       ...this.toDeclarativeDefinitions(this.getMarkdownImageStyleSpecs()),
@@ -4612,14 +4638,14 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
       desc: fragWithHTML(t("MD_TRANSCLUDE_WIDTH_DESC")),
       key: "mdSVGwidth",
       emptyValue: 500,
-      placeholder: "Enter a number e.g. 500",
+      placeholder: t("UI_EXTRA_069"),
     });
     this.configureIntegerTextSetting(new Setting(container), {
       name: t("MD_TRANSCLUDE_HEIGHT_NAME"),
       desc: fragWithHTML(t("MD_TRANSCLUDE_HEIGHT_DESC")),
       key: "mdSVGmaxHeight",
       emptyValue: 800,
-      placeholder: "Enter a number e.g. 800",
+      placeholder: t("UI_EXTRA_070"),
     });
     this.configureMarkdownFontSetting(new Setting(container));
     this.renderSettingSpecs(container, this.getMarkdownImageStyleSpecs());
@@ -4849,7 +4875,7 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
         control: {
           type: "text",
           key: "latexPreambleLocation",
-          placeholder: "e.g.: preamble.sty",
+          placeholder: t("UI_EXTRA_071"),
           vaultPath: {
             kind: "file",
             options: { optional: true, extensions: ["sty"] },
@@ -5471,7 +5497,7 @@ export class ExcalidrawSettingTab extends PluginSettingTab {
         } else if (typeof value === "number") {
           setting.addText((text) =>
             text
-              .setPlaceholder("Enter a number")
+              .setPlaceholder(t("UI_EXTRA_026"))
               .setValue(value.toString())
               .onChange((next) => {
                 const parsed = parseFloat(next);

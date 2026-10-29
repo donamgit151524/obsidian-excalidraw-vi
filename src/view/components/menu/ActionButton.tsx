@@ -1,3 +1,4 @@
+import { t } from "src/lang/helpers";
 import * as React from "react";
 import { Notice } from "obsidian";
 
@@ -62,7 +63,7 @@ export class ActionButton extends React.Component<ButtonProps, ButtonState> {
             if (this.props.longpress) {
               this.props.longpress(event);
             } else {
-              new Notice("Cannot pin this action", 3000);
+              new Notice(t("UI_EXTRA_046"), 3000);
               //this.props.view.excalidrawAPI?.setToast({message:"Cannot pin this action", duration: 3000, closable: true});
             }
             this.longpressTimeout = 0;

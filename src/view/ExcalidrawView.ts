@@ -141,10 +141,6 @@ import {
   linkPrompt,
 } from "../shared/Dialogs/Prompt";
 import {
-  createDrawingLoadErrorPrompt,
-  showDrawingLoadErrorNotice,
-} from "../shared/Dialogs/DrawingLoadErrorInfo";
-import {
   ClipboardData,
   ParsedDataTransferFile,
 } from "@zsviczian/excalidraw/types/excalidraw/clipboard";
@@ -402,9 +398,6 @@ export const addFiles = async (
       appState: s.scene.appState,
       captureUpdate: CaptureUpdateAction.NEVER,
     });
-    if (s.markdownImageChanged) {
-      view.setDirty();
-    }
   }
   for (const f of files) {
     if (view.excalidrawData.hasFile(f.id)) {
@@ -2356,7 +2349,7 @@ export default class ExcalidrawView
       }
     }
     if (counter >= 200) {
-      new Notice("Unknown error, save is taking too long");
+      new Notice(t("UI_EXTRA_047"));
       return;
     }
     if (!this.semaphores.windowMigrating) {
@@ -3243,19 +3236,37 @@ export default class ExcalidrawView
             const file = targetFile;
             const leaf = this.leaf;
             let confirmation: boolean | null = true;
+            let counter = 0;
+            const timestamp = Date.now();
             while (
               isCurrentLoad() &&
               !getImageCache().isReady() &&
               confirmation
             ) {
+              const message = `You've been now waiting for <b>${Math.round((Date.now() - timestamp) / 1000)}</b> seconds. `;
               getImageCache().initializationNotice = true;
-              const confirmationPrompt = createDrawingLoadErrorPrompt(
+              const confirmationPrompt = new MultiOptionConfirmationPrompt(
                 plugin,
-                file,
-                t("DRAWING_LOAD_ERROR_CACHE_WAIT"),
-                e,
+                `${
+                  counter > 0
+                    ? counter % 4 === 0
+                      ? `${message}The CACHE is still loading.<br><br>`
+                      : counter % 4 === 1
+                        ? `${
+                            message
+                          }Watch the top right corner for the notification.<br><br>`
+                        : counter % 4 === 2
+                          ? `${
+                              message
+                            }I really, really hope the backup will work for you! <br><br>`
+                          : `${
+                              message
+                            }I am sorry, it is taking a while, there is not much I can do... <br><br>`
+                    : ""
+                }${t("CACHE_NOT_READY")}`,
               );
               confirmation = await confirmationPrompt.waitForClose;
+              counter++;
             }
             if (!isCurrentLoad()) {
               return;
@@ -3268,15 +3279,19 @@ export default class ExcalidrawView
               return;
             }
             if (!drawingBAK) {
-              showDrawingLoadErrorNotice(plugin.app, file, e);
+              new Notice(
+                t("UI_DYNAMIC_014").replace("{0}", String((e as Error).message)).replace("{1}", String((e as Error).message ===
+                  "Cannot read property 'index' of undefined"
+                    ? "\n'# Drawing' section is likely missing"
+                    : "")),
+                10000,
+              );
               await this.setMarkdownView();
               return;
             }
-            const confirmationPrompt = createDrawingLoadErrorPrompt(
+            const confirmationPrompt = new MultiOptionConfirmationPrompt(
               plugin,
-              file,
-              t("DRAWING_LOAD_ERROR_BACKUP_AVAILABLE"),
-              e,
+              t("BACKUP_AVAILABLE"),
             );
             const confirmed = await confirmationPrompt.waitForClose;
             if (!isCurrentLoad()) {
@@ -4680,12 +4695,8 @@ export default class ExcalidrawView
     })();
   }
 
-  async addYouTubeThumbnail(link: string, saveToVault = false) {
+  async addYouTubeThumbnail(link: string) {
     const thumbnailLink = await getYouTubeThumbnailLink(link);
-    if (saveToVault) {
-      await this.addImageSaveToVault(thumbnailLink, link);
-      return;
-    }
     const ea = getEA(this);
     const id = await ea.addImage(0, 0, thumbnailLink);
     ea.getElement(id).link = link;
@@ -4700,7 +4711,7 @@ export default class ExcalidrawView
     ea.destroy();
   }
 
-  async addImageSaveToVault(link: string, sourceLink?: string) {
+  async addImageSaveToVault(link: string) {
     const ea = getEA(this);
     const mimeType = getMimeType(getURLImageExtension(link));
     const dataURL = await getDataURLFromURL(link, mimeType, 3000);
@@ -4717,10 +4728,7 @@ export default class ExcalidrawView
       ea.destroy();
       return;
     }
-    const id = await ea.addImage(0, 0, file);
-    if (sourceLink) {
-      ea.getElement(id).link = sourceLink;
-    }
+    await ea.addImage(0, 0, file);
     await ea.addElementsToView(true, true, true);
     ea.destroy();
   }
@@ -5018,7 +5026,7 @@ export default class ExcalidrawView
     ) {
       if (selectedElement) {
         new Notice(
-          "Selected element already has a link. Inserting link as text.",
+          t("UI_EXTRA_048"),
         );
       }
       await this.addText(markdownlink);
@@ -7019,7 +7027,7 @@ export default class ExcalidrawView
     try {
       const newFile = await createOrOverwriteFile(this.app, path, child.text);
       if (!newFile) {
-        new Notice("Unexpected error");
+        new Notice(t("UI_EXTRA_049"));
         return;
       }
       const ea = getEA(this);
@@ -7032,7 +7040,7 @@ export default class ExcalidrawView
       ea.destroy();
       await this.forceSave(true);
     } catch (e) {
-      new Notice(`Unexpected error: ${e.message}`);
+      new Notice(t("UI_DYNAMIC_015").replace("{0}", String(e.message)));
     }
   }
 
@@ -7089,7 +7097,7 @@ export default class ExcalidrawView
     const { imageEl, embeddedFile } = data;
     const imageDataURL = embeddedFile.getImage(false);
     if (!imageDataURL && !imageDataURL.startsWith("data:")) {
-      new Notice("Image not found");
+      new Notice(t("UI_EXTRA_050"));
       return false;
     }
     const ea = getEA(this);
@@ -7102,11 +7110,11 @@ export default class ExcalidrawView
     let dataURL = embeddedFile.getImage(false);
     if (!dataURL.startsWith("data:")) {
       new Notice(
-        "Attempting to download image from URL. This may take a long while. The operation will time out after max 1 minute",
+        t("UI_EXTRA_051"),
       );
       dataURL = await getDataURLFromURL(dataURL, embeddedFile.mimeType, 30000);
       if (!dataURL.startsWith("data:")) {
-        new Notice("Failed. Could not download image!");
+        new Notice(t("UI_EXTRA_052"));
         return false;
       }
     }
@@ -7121,7 +7129,7 @@ export default class ExcalidrawView
     api.addFiles(files);
     await ea.addElementsToView(false, true);
     ea.destroy();
-    new Notice("Image successfully converted to local file");
+    new Notice(t("UI_EXTRA_053"));
   }
 
   public insertLinkAction(linkVal: string) {

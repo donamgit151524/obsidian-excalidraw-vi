@@ -1,5 +1,4 @@
 import {
-  LOCALE,
   DEVICE,
   FRONTMATTER_KEYS,
   CJK_FONTS,
@@ -23,6 +22,13 @@ declare const PLUGIN_LANGUAGES: Record<string, string>;
 declare const PLUGIN_VERSION: string;
 
 let locale: Partial<typeof en> | null = null;
+let selectedLanguage = "vi";
+
+/** Select the plugin language independently of Obsidian's global language. */
+export function setPluginLanguage(language: unknown): void {
+  selectedLanguage = language === "en" ? "en" : "vi";
+  locale = null;
+}
 
 type LocaleFactory = (
   device: typeof DEVICE,
@@ -112,7 +118,7 @@ function loadLocale(lang: string): Partial<typeof en> {
 
 export function t(str: keyof typeof en): string {
   if (!locale) {
-    locale = loadLocale(LOCALE);
+    locale = loadLocale(selectedLanguage);
   }
   return (locale && locale[str]) || en[str];
 }

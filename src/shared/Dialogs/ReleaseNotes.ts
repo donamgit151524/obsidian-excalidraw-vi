@@ -91,7 +91,7 @@ export class ReleaseNotes extends Modal {
     this.contentEl.createEl("p", { text: "" }, (el) => {
       //files manually follow one of two options:
       setStyle(el, { textAlign: "right" });
-      const bOk = el.createEl("button", { text: "Close" });
+      const bOk = el.createEl("button", { text: t("UI_EXTRA_076") });
       bOk.onclick = () => this.close();
     });
   }

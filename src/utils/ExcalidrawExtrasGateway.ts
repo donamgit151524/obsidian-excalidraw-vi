@@ -15,7 +15,7 @@ const REQUIRED_EXTRAS_VERSIONS: Record<
 > = {
   plugin: { min: "0.0.15" },
   mathjax: { min: "1.1.0" },
-  mermaid: { exact: "3.0.0" },
+  mermaid: { exact: "2.2.2" },
   pdf: { min: "1.0.0" },
   filesystem: { min: "1.0.0" },
 };
@@ -416,13 +416,13 @@ class ExtrasActivationModal extends Modal {
           .setName(t("EXTRAS_GATEWAY_TEMP_ENABLE_TITLE"))
           .setDesc(t("EXTRAS_GATEWAY_TEMP_ENABLE_DESC"))
           .addButton((btn) =>
-            btn.setButtonText("5 Min").onClick(() => onEnable(5)),
+            btn.setButtonText(t("UI_EXTRA_042")).onClick(() => onEnable(5)),
           )
           .addButton((btn) =>
-            btn.setButtonText("30 Min").onClick(() => onEnable(30)),
+            btn.setButtonText(t("UI_EXTRA_043")).onClick(() => onEnable(30)),
           )
           .addButton((btn) =>
-            btn.setButtonText("1 Hour").onClick(() => onEnable(60)),
+            btn.setButtonText(t("UI_EXTRA_044")).onClick(() => onEnable(60)),
           );
       }
     }

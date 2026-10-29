@@ -1,0 +1,7 @@
+{
+  "baselineErrors": 120,
+  "currentErrorsAfterWhitespaceFix": 120,
+  "newDiagnostics": [],
+  "typescript": "No src errors; 21 existing declaration errors in upstream docs/dependencies",
+  "productionBuild": "passed"
+}

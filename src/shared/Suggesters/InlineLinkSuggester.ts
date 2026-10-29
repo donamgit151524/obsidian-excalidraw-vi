@@ -89,7 +89,6 @@ export class InlineLinkSuggester
   private frameItems: FrameSuggestion[] = [];
   private tagItems: TagSuggestion[] = [];
   private linkItemsLoaded = false;
-  private suggestionGeneration = 0;
 
   constructor(
     app: App,
@@ -228,7 +227,6 @@ export class InlineLinkSuggester
   }
 
   onInputChanged(): void {
-    const generation = ++this.suggestionGeneration;
     const inputStr = this.modifyInput(this.inputEl.value);
     this.caretPos = this.inputEl.selectionStart ?? inputStr.length;
 
@@ -281,9 +279,6 @@ export class InlineLinkSuggester
           this.frameItems = [];
         }
 
-        if (generation !== this.suggestionGeneration) {
-          return;
-        }
         this.tagItems = [];
         this.block = true;
         super.onInputChanged();
@@ -896,11 +891,9 @@ export class InlineLinkSuggester
 
   // Keep listeners so the suggester can trigger multiple times in the same input session.
   close(): void {
-    // A pending heading/block/frame lookup must not reopen a retired input's scope.
-    const generation = ++this.suggestionGeneration;
-    // Docking/closing a host can detach the dropdown before its scope is released.
-    // popScope is idempotent and uses the scope's acquisition window, not DOM visibility.
-    this.app.keymap.popScope(this.scope);
+    if (this.suggestEl.isConnected) {
+      this.app.keymap.popScope(this.scope);
+    }
     this.suggester.setSuggestions([]);
     if (this.popper?.deref()) {
       this.popper.deref().destroy();
@@ -908,9 +901,7 @@ export class InlineLinkSuggester
     this.suggestEl.detach();
     this.shouldNotOpen = false;
     window.setTimeout(() => {
-      if (generation === this.suggestionGeneration) {
-        this.block = false;
-      }
+      this.block = false;
     });
   }
 

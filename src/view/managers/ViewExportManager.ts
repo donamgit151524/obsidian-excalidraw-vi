@@ -130,7 +130,7 @@ export class ViewExportManager {
         JSON.stringify(this.view.getScene(), null, "\t"),
         ".excalidraw",
       );
-      new Notice(`Exported to ${file?.name}`, 6000);
+      new Notice(t("UI_DYNAMIC_016").replace("{0}", String(file?.name)), 6000);
       return;
     }
     download(

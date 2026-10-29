@@ -1,0 +1,249 @@
+labels.signUp|Đăng ký
+labels.signIn|Đăng nhập
+labels.upgrade|Nâng cấp
+labels.tryExcalidrawPlus|Dùng thử Excalidraw+
+labels.plusFreeTrial|Dùng thử miễn phí 14 ngày
+labels.chartType_bar|Biểu đồ cột
+labels.chartType_line|Biểu đồ đường
+labels.chartType_radar|Biểu đồ radar
+labels.chartType_plaintext|Văn bản thuần
+labels.textColor|Màu chữ
+labels.pressure|Lực nhấn
+labels.pressure_constant|Cố định
+labels.pressure_variable|Thay đổi
+labels.arrowhead_dot|Chấm
+labels.arrowhead_crowfoot_many|Chân quạ (nhiều)
+labels.arrowhead_crowfoot_one|Chân quạ (một)
+labels.arrowhead_crowfoot_one_or_many|Chân quạ (một hoặc nhiều)
+labels.arrowhead_cardinality_one|Số lượng (một)
+labels.arrowhead_cardinality_many|Số lượng (nhiều)
+labels.arrowhead_cardinality_one_or_many|Số lượng (một hoặc nhiều)
+labels.arrowhead_cardinality_exactly_one|Số lượng (đúng một)
+labels.arrowhead_cardinality_zero_or_one|Số lượng (không hoặc một)
+labels.arrowhead_cardinality_zero_or_many|Số lượng (không hoặc nhiều)
+labels.cardinality|Số lượng quan hệ
+labels.localFont|Phông chữ cục bộ
+labels.extraSmall|Rất nhỏ
+labels.extraThin|Rất mảnh
+labels.you|Bạn
+labels.lineEditor.editArrow|Chỉnh sửa mũi tên
+labels.polygon.breakPolygon|Tách đa giác
+labels.polygon.convertToPolygon|Chuyển thành đa giác
+labels.removeFrame|Xóa khung
+labels.toggleWrap|Bọc hoặc bỏ bọc vùng chọn
+labels.tab|Thẻ
+labels.shapeSwitch|Đổi hình dạng
+labels.toggleFrameRole|Đổi vai trò của khung
+labels.preferences|Tùy chọn
+labels.preferences_toolLock|Khóa công cụ
+labels.boxSelectionMode|Chế độ chọn vùng
+labels.boxSelectionContain|Bao trọn
+labels.boxSelectionOverlap|Giao nhau
+labels.arrowBinding|Gắn mũi tên
+labels.midpointSnapping|Bắt dính vào trung điểm
+labels.showHints|Hiện gợi ý
+labels.inputDevice|Thiết bị nhập
+labels.inputDeviceTrackpad|Bàn di chuột
+labels.inputDeviceMouse|Chuột
+library.search.inputPlaceholder|Tìm trong thư viện
+library.search.heading|Kết quả trong thư viện
+library.search.noResults|Không tìm thấy mục phù hợp…
+library.search.clearSearch|Xóa tìm kiếm
+search.frames|Khung
+search.texts|Văn bản
+buttons.reset|Đặt lại
+buttons.saveLibNames|Lưu tên và thoát
+buttons.publishLibrary|Đổi tên hoặc xuất bản
+alerts.localStorageQuotaExceeded|Đã vượt giới hạn lưu trữ của trình duyệt. Các thay đổi sẽ không được lưu.
+toolBar.lasso|Chọn bằng dây thòng lọng
+toolBar.stickynote|Giấy ghi chú
+toolBar.autoshape|Vẽ thành hình
+toolBar.bucketfill|Đổ màu vùng kín
+toolBar.convertElementType|Đổi loại hình
+bucketfill.noRegion|Không tìm thấy vùng kín để đổ màu tại đây.
+bucketfill.tooComplex|Vùng này quá phức tạp để đổ màu.
+element.stickynote|Giấy ghi chú
+hints.dismissSearch|Nhấn {{shortcut}} để đóng tìm kiếm
+hints.canvasPanning|Để di chuyển bảng vẽ, giữ {{shortcut_1}} hoặc {{shortcut_2}} trong khi kéo, hoặc dùng công cụ bàn tay
+hints.arrowTool|Nhấp để vẽ nhiều điểm, kéo để vẽ một đoạn. Nhấn {{shortcut}} lần nữa để đổi loại mũi tên.
+hints.arrowBindModifiers|Giữ {{shortcut_1}} để tắt gắn kết, hoặc {{shortcut_2}} để gắn vào một điểm cố định
+hints.stickynote|Nhấp để đặt ghi chú, hoặc kéo để chọn kích thước
+hints.autoshape|Vẽ hình chữ nhật, hình tròn, hình thoi, đường thẳng và mũi tên
+hints.text_selected|Nhấp đúp hoặc nhấn {{shortcut}} để sửa văn bản
+hints.text_editing|Nhấn {{shortcut_1}} hoặc {{shortcut_2}} để kết thúc chỉnh sửa
+hints.linearElementMulti|Nhấp vào điểm cuối hoặc nhấn {{shortcut_1}} hay {{shortcut_2}} để kết thúc
+hints.lockAngle|Giữ {{shortcut}} để cố định góc
+hints.resize|Giữ {{shortcut_1}} để giữ tỉ lệ khi đổi kích thước; giữ {{shortcut_2}} để đổi từ tâm
+hints.resizeImage|Giữ {{shortcut_1}} để đổi kích thước tự do; giữ {{shortcut_2}} để đổi từ tâm
+hints.resizeStickyNote|Giữ {{shortcut_1}} để đổi kích thước tự do, {{shortcut_2}} để đổi từ tâm
+hints.toggleArrowhead|Nhấp đúp để bật hoặc tắt đầu mũi tên
+hints.lineEditor_info|Giữ {{shortcut_1}} và nhấp đúp, hoặc nhấn {{shortcut_2}} để sửa các điểm
+hints.lineEditor_line_info|Nhấp đúp hoặc nhấn {{shortcut}} để sửa các điểm
+hints.lineEditor_pointSelected|Nhấn {{shortcut_1}} để xóa điểm, {{shortcut_2}} để nhân đôi, hoặc kéo để di chuyển
+hints.lineEditor_nothingSelected|Chọn điểm để sửa (giữ {{shortcut_1}} để chọn nhiều điểm), hoặc giữ {{shortcut_2}} và nhấp để thêm điểm
+hints.createFlowchart|Nhấn {{shortcut}} để tạo lưu đồ
+hints.deepBoxSelect|Giữ {{shortcut}} để chọn sâu và ngăn kéo đối tượng
+hints.cycleSelection|Giữ {{shortcut}} và nhấp để lần lượt chọn đối tượng chồng nhau, hoặc kéo để nhân đôi
+hints.eraserRevert|Giữ {{shortcut}} để khôi phục các đối tượng đã đánh dấu xóa
+hints.disableSnapping|Giữ {{shortcut}} để tắt bắt dính
+hints.enterCropEditor|Nhấp đúp vào ảnh hoặc nhấn {{shortcut}} để cắt ảnh
+hints.leaveCropEditor|Nhấp ra ngoài ảnh hoặc nhấn {{shortcut_1}} hay {{shortcut_2}} để kết thúc cắt ảnh
+errorSplash.trackedToSentry|Lỗi có mã {{eventId}} đã được ghi nhận trên hệ thống.
+errorSplash.openIssueMessage|Chúng tôi đã cẩn thận không đưa nội dung bản vẽ vào báo cáo lỗi. Nếu bản vẽ không chứa thông tin riêng tư, bạn có thể phản hồi tại <button>trình theo dõi lỗi</button>. Hãy sao chép thông tin bên dưới vào báo cáo lỗi trên GitHub.
+progressDialog.title|Đang lưu
+progressDialog.defaultMessage|Đang chuẩn bị lưu…
+exportDialog.disk_details|Xuất dữ liệu bản vẽ thành tệp để có thể nhập lại sau.
+helpDialog.deepSelect|Chọn sâu
+helpDialog.deepBoxSelect|Chọn sâu trong vùng và ngăn kéo đối tượng
+helpDialog.createFlowchart|Tạo lưu đồ từ một đối tượng thông thường
+helpDialog.navigateFlowchart|Di chuyển trong lưu đồ
+helpDialog.textNewLine|Thêm dòng mới khi sửa văn bản
+helpDialog.zoomToFit|Thu phóng vừa tất cả đối tượng
+helpDialog.zoomToSelection|Thu phóng vừa vùng chọn
+helpDialog.cropFinish|Kết thúc cắt ảnh
+publishDialog.title|Xuất bản thư viện
+publishDialog.placeholder.githubHandle|Tên tài khoản GitHub (không bắt buộc), để bạn có thể sửa thư viện sau khi gửi duyệt
+imageExportDialog.label.embedScene|Nhúng dữ liệu bản vẽ
+imageExportDialog.title.exportToPng|Xuất thành PNG
+imageExportDialog.title.exportToSvg|Xuất thành SVG
+stats.shapes|Hình
+stats.fullTitle|Thuộc tính bảng vẽ và hình
+stats.elementProperties|Thuộc tính hình
+toast.fileSavedToFilename|Đã lưu vào {filename}
+toast.canvas|bảng vẽ
+colors.white|Trắng
+colors.red|Đỏ
+colors.pink|Hồng
+colors.grape|Tím nho
+colors.violet|Tím
+colors.gray|Xám
+colors.blue|Xanh dương
+colors.cyan|Xanh lơ
+colors.bronze|Đồng
+welcomeScreen.app.center_heading|Bản vẽ được lưu trong bộ nhớ của trình duyệt.
+welcomeScreen.app.center_heading_line2|Dữ liệu trình duyệt có thể bị xóa bất ngờ.
+welcomeScreen.app.center_heading_line3|Hãy thường xuyên lưu ra tệp để tránh mất bản vẽ.
+welcomeScreen.app.center_heading_plus|Bạn muốn chuyển sang Excalidraw+?
+welcomeScreen.app.menuHint|Xuất, tùy chọn, ngôn ngữ…
+welcomeScreen.defaults.menuHint|Xuất, tùy chọn và nhiều hơn nữa…
+welcomeScreen.defaults.center_heading|Vẽ sơ đồ thật đơn giản.
+welcomeScreen.defaults.toolbarHint|Chọn công cụ và bắt đầu vẽ!
+welcomeScreen.defaults.helpHint|Phím tắt và trợ giúp
+colorPicker.color|Màu
+colorPicker.mostUsedCustomColors|Màu tùy chỉnh thường dùng
+colorPicker.colors|Các màu
+colorPicker.shades|Sắc độ
+colorPicker.hexCode|Mã hex
+colorPicker.noShades|Không có sắc độ cho màu này
+colorPicker.invalidColor|Màu không hợp lệ
+colorPicker.invalidHexLength|Mã hex phải có 3, 4, 6 hoặc 8 ký tự
+colorPicker.topPicksTip|Mẹo: kéo màu vào danh sách yêu thích để ghim
+colorPicker.resetTopPicks|Khôi phục các màu yêu thích mặc định
+overwriteConfirm.action.exportToImage.title|Xuất thành ảnh
+overwriteConfirm.action.exportToImage.button|Xuất thành ảnh
+overwriteConfirm.action.exportToImage.description|Xuất bản vẽ thành ảnh có kèm dữ liệu để nhập lại sau.
+overwriteConfirm.action.saveToDisk.title|Lưu vào ổ đĩa
+overwriteConfirm.action.saveToDisk.button|Lưu vào ổ đĩa
+overwriteConfirm.action.saveToDisk.description|Xuất dữ liệu bản vẽ thành tệp để nhập lại sau.
+overwriteConfirm.action.excalidrawPlus.title|Excalidraw+
+overwriteConfirm.action.excalidrawPlus.button|Xuất sang Excalidraw+
+overwriteConfirm.action.excalidrawPlus.description|Lưu bản vẽ vào không gian làm việc Excalidraw+.
+overwriteConfirm.modal.loadFromFile.title|Nạp từ tệp
+overwriteConfirm.modal.loadFromFile.button|Nạp từ tệp
+overwriteConfirm.modal.loadFromFile.description|Nạp tệp sẽ <bold>thay thế nội dung hiện tại</bold>.<br></br>Bạn có thể sao lưu bản vẽ trước bằng một trong các cách bên dưới.
+overwriteConfirm.modal.shareableLink.title|Nạp từ liên kết
+overwriteConfirm.modal.shareableLink.button|Thay thế nội dung của tôi
+overwriteConfirm.modal.shareableLink.description|Nạp bản vẽ bên ngoài sẽ <bold>thay thế nội dung hiện tại</bold>.<br></br>Bạn có thể sao lưu bản vẽ trước bằng một trong các cách bên dưới.
+fileDrop.replace|Thả để thay thế nội dung
+fileDrop.add|Thả để thêm vào bảng vẽ
+fileDrop.importLibrary|Thả để nhập thư viện
+fileDrop.replaceHint|Giữ <shift>Shift</shift> để giữ nội dung hiện tại
+fileDrop.keepHint|Nội dung hiện tại sẽ được giữ lại
+fileDrop.libraryHint|Các tệp thư viện sẽ được thêm vào
+fileDrop.replacedToast|Đã thay thế nội dung. Nhấn {{shortcut}} để hoàn tác
+mermaid.title|Mermaid sang Excalidraw
+mermaid.button|Chèn
+mermaid.description|Hiện chỉ hỗ trợ sơ đồ <flowchartLink>lưu đồ</flowchartLink>, <sequenceLink>tuần tự</sequenceLink>, <classLink>lớp</classLink> và <erdLink>quan hệ thực thể</erdLink>. Các loại khác sẽ được hiển thị dưới dạng ảnh trong Excalidraw.
+mermaid.syntax|Cú pháp Mermaid
+mermaid.preview|Xem trước
+mermaid.label|Mermaid
+mermaid.inputPlaceholder|Nhập mã sơ đồ Mermaid tại đây…
+mermaid.autoFixAvailable|Có thể tự sửa lỗi
+ttd.error|Lỗi!
+chat.inputPlaceholder|Nhập ý tưởng sơ đồ tại đây… ({{shortcut}} để xuống dòng)
+chat.inputPlaceholderWithMessages|Tiếp tục điều chỉnh sơ đồ…
+chat.generating|Đang tạo…
+chat.rateLimitRemaining|Còn {{count}} yêu cầu hôm nay
+chat.role.user|Bạn
+chat.role.assistant|Trợ lý AI
+chat.role.system|Hệ thống
+chat.aiBeta|AI thử nghiệm
+chat.label|Trò chuyện
+chat.menu|Trình đơn
+chat.newChat|Cuộc trò chuyện mới
+chat.deleteChat|Xóa cuộc trò chuyện
+chat.deleteMessage|Xóa tin nhắn
+chat.viewAsMermaid|Xem dưới dạng Mermaid
+chat.placeholder.title|Cùng thiết kế sơ đồ của bạn
+chat.placeholder.description|Mô tả sơ đồ bạn muốn tạo để chúng tôi tạo giúp bạn.
+chat.placeholder.hint|Hiện hỗ trợ lưu đồ, sơ đồ tuần tự, lớp, trạng thái và quan hệ thực thể.
+chat.preview|Xem trước
+chat.insert|Chèn
+chat.retry|Thử lại
+chat.errors.promptTooShort|Mô tả quá ngắn (tối thiểu {{min}} ký tự)
+chat.errors.promptTooLong|Mô tả quá dài (tối đa {{max}} ký tự)
+chat.errors.generationFailed|Không tạo được sơ đồ
+chat.errors.invalidDiagram|Sơ đồ được tạo không hợp lệ. Bạn có thể sửa thủ công, thử lại với chức năng tự sửa, hoặc nhập mô tả khác.
+chat.errors.fixInMermaid|Sửa mã Mermaid thủ công →
+chat.errors.aiRepair|Tạo lại (tự sửa lỗi) →
+chat.errors.requestAborted|Yêu cầu đã bị hủy
+chat.errors.requestFailed|Yêu cầu thất bại
+chat.errors.mermaidParseError|Lỗi cú pháp Mermaid
+chat.rateLimit.messageLimit|Bạn đã hết lượt AI của gói miễn phí. Dùng thử Excalidraw+ để có thêm lượt hoặc quay lại vào ngày mai.
+chat.rateLimit.generalRateLimit|Bạn thao tác quá nhanh! Vui lòng đợi một chút rồi thử lại.
+chat.rateLimit.messageLimitInputPlaceholder|Bạn đã hết lượt gửi tin nhắn
+chat.upsellBtnLabel|Nâng cấp lên Plus
+quickSearch.placeholder|Tìm nhanh
+fontList.badge.old|cũ
+fontList.sceneFonts|Trong bản vẽ này
+fontList.availableFonts|Phông chữ có sẵn
+fontList.empty|Không tìm thấy phông chữ
+fontList.topPicksTip|Mẹo: kéo phông chữ vào danh sách yêu thích để ghim
+fontList.resetTopPicks|Khôi phục các phông chữ yêu thích mặc định
+userList.empty|Không tìm thấy người dùng
+userList.hint.text|Nhấp vào người dùng để theo dõi
+userList.hint.followStatus|Bạn đang theo dõi người dùng này
+userList.hint.inCall|Người dùng đang gọi thoại
+userList.hint.micMuted|Micrô của người dùng đang tắt
+userList.hint.isSpeaking|Người dùng đang nói
+commandPalette.title|Khay lệnh
+commandPalette.shortcuts.select|Chọn
+commandPalette.shortcuts.confirm|Xác nhận
+commandPalette.shortcuts.close|Đóng
+commandPalette.recents|Dùng gần đây
+commandPalette.search.placeholder|Tìm trình đơn, lệnh và các tính năng khác
+commandPalette.search.noMatch|Không có lệnh phù hợp…
+commandPalette.itemNotAvailable|Lệnh không khả dụng…
+commandPalette.shortcutHint|Nhấn {{shortcut}} để mở khay lệnh
+keys.ctrl|Ctrl
+keys.option|Option
+keys.cmd|Cmd
+keys.alt|Alt
+keys.escape|Esc
+keys.enter|Enter
+keys.shift|Shift
+keys.spacebar|Dấu cách
+keys.delete|Delete
+keys.mmb|Con lăn chuột
+labels.moveCanvas|Di chuyển bảng vẽ
+labels.bringForward|Đưa lên một lớp
+labels.sendToBack|Đưa xuống dưới cùng
+labels.bringToFront|Đưa lên trên cùng
+labels.sendBackward|Đưa xuống một lớp
+labels.strokeStyle_solid|Liền nét
+labels.strokeStyle_dashed|Nét đứt
+labels.strokeStyle_dotted|Nét chấm
+labels.sloppiness|Độ nguệch ngoạc
+labels.opacity|Độ đục
+labels.arrowhead_diamond|Hình thoi
+labels.arrowhead_diamond_outline|Hình thoi (viền)

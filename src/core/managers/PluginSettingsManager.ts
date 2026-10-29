@@ -9,10 +9,7 @@ import {
   decryptPersistedAPIKeys,
   encryptPersistedAPIKeys,
 } from "src/utils/settingsKeyObfuscation";
-import {
-  SerializedSettingsWriter,
-  stringifySettingsCanonically,
-} from "src/core/settings/SerializedSettingsWriter";
+import { SerializedSettingsWriter } from "src/core/settings/SerializedSettingsWriter";
 import { SettingsRecoveryStore } from "src/core/settings/SettingsRecoveryStore";
 import {
   SettingsRecoveryPrompt,
@@ -24,7 +21,7 @@ import {
   isSettingsDataRecord,
   type SettingsDataFileState,
 } from "src/core/settings/settingsDataValidation";
-import { t } from "src/lang/helpers";
+import { setPluginLanguage, t } from "src/lang/helpers";
 
 type PersistedExcalidrawSettings = Partial<ExcalidrawSettings> &
   Record<string, unknown>;
@@ -124,7 +121,6 @@ export class PluginSettingsManager {
           encryptPersistedAPIKeys(
             this.host.settings as PersistedExcalidrawSettings,
           ),
-          true,
         );
         return false;
       }
@@ -179,6 +175,9 @@ export class PluginSettingsManager {
       DEFAULT_SETTINGS,
       decryptedSettings,
     );
+    this.host.settings.uiLanguage =
+      this.host.settings.uiLanguage === "en" ? "en" : "vi";
+    setPluginLanguage(this.host.settings.uiLanguage);
     if (typeof decryptedSettings.libraryStorageMode === "undefined") {
       const legacyLibrary: unknown =
         typeof decryptedSettings.library === "string" &&
@@ -294,10 +293,10 @@ export class PluginSettingsManager {
       this.host.settings as PersistedExcalidrawSettings,
     );
     const shouldPersistEncryptedSettings =
-      stringifySettingsCanonically(encryptedPersistedSettings) !==
-      stringifySettingsCanonically(persistedSettings);
+      JSON.stringify(encryptedPersistedSettings) !==
+      JSON.stringify(persistedSettings);
     if (shouldPersistStartupChoice) {
-      await this.persistSnapshot(encryptedPersistedSettings, true);
+      await this.persistSnapshot(encryptedPersistedSettings);
       if (recoveredInvalidStartup) {
         new Notice(t("SETTINGS_DATA_RECOVERED"), 12000);
       }
@@ -308,7 +307,6 @@ export class PluginSettingsManager {
       await this.persistSnapshot(encryptedPersistedSettings);
     } else if (!this.persistenceBlockedByInvalidData) {
       await this.saveRecoverySnapshot(encryptedPersistedSettings);
-      this.writer.rememberPersistedSnapshot(persistedSettings);
     }
     this.hasCompletedInitialLoad = true;
     return !hasInvalidSettings;
@@ -334,9 +332,8 @@ export class PluginSettingsManager {
 
   private persistSnapshot(
     settings: PersistedExcalidrawSettings,
-    force = false,
   ): Promise<void> {
-    return this.writer.persist(settings, force ? { force: true } : undefined);
+    return this.writer.persist(settings);
   }
 
   /** Closes the device-local recovery database connection. */

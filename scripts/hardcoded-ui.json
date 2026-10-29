@@ -1,0 +1,471 @@
+[
+  {
+    "file": "src\\core\\main.ts",
+    "line": 458,
+    "text": "Error loading plugin settings",
+    "start": 16662,
+    "end": 16693
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 477,
+    "text": "Error adding Markdown post processor",
+    "start": 17355,
+    "end": 17393
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 520,
+    "text": "Error initializing compression worker",
+    "start": 19036,
+    "end": 19075
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 528,
+    "text": "Error initializing Excalidraw config",
+    "start": 19327,
+    "end": 19365
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 540,
+    "text": "Error registering monkey patches",
+    "start": 19799,
+    "end": 19833
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 548,
+    "text": "Error initializing styles manager",
+    "start": 20069,
+    "end": 20104
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 558,
+    "text": "Error initializing script engine",
+    "start": 20383,
+    "end": 20417
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 568,
+    "text": "Error initializing image cache",
+    "start": 20684,
+    "end": 20716
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 578,
+    "text": "Error switching views to Excalidraw",
+    "start": 21009,
+    "end": 21046
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 604,
+    "text": "Error opening release notes",
+    "start": 21882,
+    "end": 21911
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 619,
+    "text": "Error running startup script",
+    "start": 22532,
+    "end": 22562
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 628,
+    "text": "Error setting up editor handler",
+    "start": 22822,
+    "end": 22855
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 638,
+    "text": "Error registering editor suggester",
+    "start": 23140,
+    "end": 23176
+  },
+  {
+    "file": "src\\core\\main.ts",
+    "line": 646,
+    "text": "Error setting up property types",
+    "start": 23400,
+    "end": 23433
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 154,
+    "text": "Error registering commands",
+    "start": 5351,
+    "end": 5379
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 316,
+    "text": "The compressed string is corrupted. Unable to decompress data.",
+    "start": 10491,
+    "end": 10555
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 362,
+    "text": "Select a single embeddable element and try again",
+    "start": 11857,
+    "end": 11907
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 404,
+    "text": "Select at least one embeddable element and try again",
+    "start": 13142,
+    "end": 13196
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1302,
+    "text": "Select a single image element and try again",
+    "start": 40620,
+    "end": 40665
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1367,
+    "text": "Select a single image element and try again",
+    "start": 42791,
+    "end": 42836
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1379,
+    "text": "Select a single image element and try again",
+    "start": 43141,
+    "end": 43186
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1422,
+    "text": "Select a single image element and try again",
+    "start": 44506,
+    "end": 44551
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1434,
+    "text": "Select a single image element and try again",
+    "start": 44856,
+    "end": 44901
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1465,
+    "text": "Select a single image element and try again",
+    "start": 45778,
+    "end": 45823
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1477,
+    "text": "Please try again.",
+    "start": 46159,
+    "end": 46178
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1508,
+    "text": "Select a single back-of-the-note card and try again",
+    "start": 46990,
+    "end": 47043
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1517,
+    "text": "The selected embeddable is not a back-of-the-note card.",
+    "start": 47352,
+    "end": 47409
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1543,
+    "text": "Select a single PDF embeddable and try again",
+    "start": 48169,
+    "end": 48215
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1669,
+    "text": "Select a single image element or single PDF embeddable and try again",
+    "start": 52508,
+    "end": 52578
+  },
+  {
+    "file": "src\\core\\managers\\CommandManager.ts",
+    "line": 1713,
+    "text": "Select a single image element and try again",
+    "start": 53932,
+    "end": 53977
+  },
+  {
+    "file": "src\\core\\managers\\PackageManager.ts",
+    "line": 92,
+    "text": "Error loading the Excalidraw package. Some features may not work correctly.",
+    "start": 3458,
+    "end": 3535
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 5491,
+    "text": "Enter a number",
+    "start": 190569,
+    "end": 190585
+  },
+  {
+    "file": "src\\shared\\CropImage.ts",
+    "line": 103,
+    "text": "Multiple frames are not supported for image cropping. Discarding frames from mask.",
+    "start": 3527,
+    "end": 3611
+  },
+  {
+    "file": "src\\shared\\CropImage.ts",
+    "line": 182,
+    "text": "No image found. Cannot crop.",
+    "start": 5893,
+    "end": 5923
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 54,
+    "text": "Import PDF",
+    "start": 2012,
+    "end": 2024
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 353,
+    "text": "Lock pages on canvas after import",
+    "start": 11569,
+    "end": 11604
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 375,
+    "text": "Import direction",
+    "start": 12239,
+    "end": 12257
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 392,
+    "text": "Number of columns",
+    "start": 12732,
+    "end": 12751
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 412,
+    "text": "Number of rows",
+    "start": 13371,
+    "end": 13387
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 432,
+    "text": "Size of gap between pages",
+    "start": 13976,
+    "end": 14003
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 451,
+    "text": "Imported page size",
+    "start": 14625,
+    "end": 14645
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 470,
+    "text": "Select a document first",
+    "start": 15235,
+    "end": 15260
+  },
+  {
+    "file": "src\\shared\\Dialogs\\InsertPDFModal.ts",
+    "line": 473,
+    "text": "Import PDF",
+    "start": 15336,
+    "end": 15348
+  },
+  {
+    "file": "src\\shared\\Dialogs\\RankMessage.ts",
+    "line": 25,
+    "text": "Congratulations, glorious knight!",
+    "start": 821,
+    "end": 856
+  },
+  {
+    "file": "src\\shared\\ExcalidrawData.ts",
+    "line": 1121,
+    "text": "Mermaid images are only supported in Obsidian 1.4.14 and above. Please update Obsidian to see the mermaid images in this drawing. Obsidian mobile 1.4.14 currently only avaiable to Obsidian insiders",
+    "start": 40532,
+    "end": 40731
+  },
+  {
+    "file": "src\\shared\\OCR\\Taskbone.ts",
+    "line": 163,
+    "text": "Something went wrong while processing your request. Please check developer console for more information",
+    "start": 4842,
+    "end": 4947
+  },
+  {
+    "file": "src\\shared\\Suggesters\\LinkSuggesterUtils.ts",
+    "line": 206,
+    "text": "No match",
+    "start": 6184,
+    "end": 6194
+  },
+  {
+    "file": "src\\shared\\Suggesters\\LinkSuggesterUtils.ts",
+    "line": 229,
+    "text": "No match",
+    "start": 6993,
+    "end": 7003
+  },
+  {
+    "file": "src\\utils\\AIUtils.ts",
+    "line": 2227,
+    "text": "AI API key is not set. Please set it in plugin settings.",
+    "start": 62000,
+    "end": 62058
+  },
+  {
+    "file": "src\\utils\\ExcalidrawExtrasGateway.ts",
+    "line": 419,
+    "text": "5 Min",
+    "start": 11996,
+    "end": 12003
+  },
+  {
+    "file": "src\\utils\\ExcalidrawExtrasGateway.ts",
+    "line": 422,
+    "text": "30 Min",
+    "start": 12108,
+    "end": 12116
+  },
+  {
+    "file": "src\\utils\\ExcalidrawExtrasGateway.ts",
+    "line": 425,
+    "text": "1 Hour",
+    "start": 12222,
+    "end": 12230
+  },
+  {
+    "file": "src\\view\\components\\CustomEmbeddable.tsx",
+    "line": 1286,
+    "text": "Sorry, cannot edit rotated Markdown documents",
+    "start": 43305,
+    "end": 43352
+  },
+  {
+    "file": "src\\view\\components\\menu\\ActionButton.tsx",
+    "line": 65,
+    "text": "Cannot pin this action",
+    "start": 2088,
+    "end": 2112
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 2352,
+    "text": "Unknown error, save is taking too long",
+    "start": 82468,
+    "end": 82508
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 5031,
+    "text": "Selected element already has a link. Inserting link as text.",
+    "start": 172854,
+    "end": 172916
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 7032,
+    "text": "Unexpected error",
+    "start": 241977,
+    "end": 241995
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 7102,
+    "text": "Image not found",
+    "start": 244158,
+    "end": 244175
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 7115,
+    "text": "Attempting to download image from URL. This may take a long while. The operation will time out after max 1 minute",
+    "start": 244596,
+    "end": 244711
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 7119,
+    "text": "Failed. Could not download image!",
+    "start": 244867,
+    "end": 244902
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 7134,
+    "text": "Image successfully converted to local file",
+    "start": 245292,
+    "end": 245336
+  },
+  {
+    "file": "src\\view\\managers\\DropManager.ts",
+    "line": 168,
+    "text": "On drop hook error. See console log for details",
+    "start": 5063,
+    "end": 5112
+  },
+  {
+    "file": "src\\view\\managers\\DropManager.ts",
+    "line": 574,
+    "text": "Not imported to vault. Embedded with local uri.",
+    "start": 20128,
+    "end": 20177
+  },
+  {
+    "file": "src\\view\\managers\\ViewSaveCoordinator.ts",
+    "line": 414,
+    "text": "Save successful",
+    "start": 13566,
+    "end": 13583
+  },
+  {
+    "file": "src\\view\\sidepanel\\Sidepanel.ts",
+    "line": 193,
+    "text": "Excalidraw sidepanel is empty. Run a panel-enabled Excalidraw script to add a panel.",
+    "start": 7032,
+    "end": 7118
+  },
+  {
+    "file": "src\\view\\sidepanel\\Sidepanel.ts",
+    "line": 204,
+    "text": "Loading Excalidraw…",
+    "start": 7467,
+    "end": 7488
+  },
+  {
+    "file": "src\\view\\sidepanel\\Sidepanel.ts",
+    "line": 524,
+    "text": "Excalidraw sidepanel is empty. Run a panel-enabled Excalidraw script to add a panel.",
+    "start": 17698,
+    "end": 17784
+  }
+]

@@ -51,7 +51,7 @@ export class InsertPDFModal extends Modal {
 
   onOpen(): void {
     this.containerEl.classList.add("excalidraw-release");
-    this.titleEl.setText(`Import PDF`);
+    this.titleEl.setText(t("UI_EXTRA_029"));
     void this.createForm();
   }
 
@@ -350,7 +350,7 @@ export class InsertPDFModal extends Modal {
       );
 
     new Setting(ce)
-      .setName("Lock pages on canvas after import")
+      .setName(t("UI_EXTRA_030"))
       .addToggle((toggle) => {
         laiToggle = toggle;
         toggle.setValue(this.lockAfterImport).onChange((value) => {
@@ -372,11 +372,11 @@ export class InsertPDFModal extends Modal {
       }
     };
 
-    new Setting(ce).setName("Import direction").addDropdown((dropdown) =>
+    new Setting(ce).setName(t("UI_EXTRA_031")).addDropdown((dropdown) =>
       dropdown
         .addOptions({
-          down: "Top > Down",
-          right: "Left > Right",
+          down: t("UI_EXTRA_085"),
+          right: t("UI_EXTRA_086"),
         })
         .setValue(this.direction)
         .onChange((value) => {
@@ -389,7 +389,7 @@ export class InsertPDFModal extends Modal {
     let columnsText: HTMLDivElement;
     const numColumnsSetting = new Setting(ce);
     numColumnsSetting
-      .setName("Number of columns")
+      .setName(t("UI_EXTRA_032"))
       .addSlider((slider) =>
         slider
           .setLimits(1, 100, 1)
@@ -409,7 +409,7 @@ export class InsertPDFModal extends Modal {
     let rowsText: HTMLDivElement;
     const numRowsSetting = new Setting(ce);
     numRowsSetting
-      .setName("Number of rows")
+      .setName(t("UI_EXTRA_033"))
       .addSlider((slider) =>
         slider
           .setLimits(1, 100, 1)
@@ -429,7 +429,7 @@ export class InsertPDFModal extends Modal {
 
     let gapSizeText: HTMLDivElement;
     new Setting(ce)
-      .setName("Size of gap between pages")
+      .setName(t("UI_EXTRA_034"))
       .addSlider((slider) =>
         slider
           .setLimits(10, 200, 10)
@@ -448,7 +448,7 @@ export class InsertPDFModal extends Modal {
 
     const initialDims = this.getMaxSelectedPageDimensions();
     const importSizeSetting = new Setting(ce)
-      .setName("Imported page size")
+      .setName(t("UI_EXTRA_035"))
       .setDesc(
         `${Math.round(initialDims.width * this.importScale)} x ${Math.round(initialDims.height * this.importScale)}`,
       )
@@ -467,10 +467,10 @@ export class InsertPDFModal extends Modal {
     this.setImageSizeMessage();
 
     const actionButton = new Setting(ce)
-      .setDesc("Select a document first")
+      .setDesc(t("UI_EXTRA_036"))
       .addButton((button) => {
         button
-          .setButtonText("Import PDF")
+          .setButtonText(t("UI_EXTRA_029"))
           .setCta()
           .onClick(async () => {
             const ea = getEA(this.view);

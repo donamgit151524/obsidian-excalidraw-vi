@@ -1,3 +1,4 @@
+import { t } from "src/lang/helpers";
 import { updateExcalidrawLib } from "src/constants/constants";
 import { ExcalidrawLib } from "../../types/excalidrawLib";
 import { PackageLease, Packages } from "../../types/types";
@@ -89,7 +90,7 @@ export class PackageManager {
         "PackageManager constructor",
       );
       new Notice(
-        "Error loading the Excalidraw package. Some features may not work correctly.",
+        t("UI_EXTRA_025"),
         10000,
       );
       console.error("Error loading the Excalidraw package", e);
@@ -160,11 +161,10 @@ export class PackageManager {
     if (
       !lib ||
       typeof lib.configureObsidianExcalidrawHost !== "function" ||
-      typeof lib.OBSIDIAN_EXCALIDRAW_HOST_PROTOCOL_VERSION !== "number" ||
-      Number(lib.OBSIDIAN_EXCALIDRAW_HOST_PROTOCOL_VERSION) !== 3
+      typeof lib.OBSIDIAN_EXCALIDRAW_HOST_PROTOCOL_VERSION !== "number"
     ) {
       throw new Error(
-        "Excalidraw package requires Obsidian host protocol 3",
+        "Excalidraw package is missing the package host boundary",
       );
     }
 

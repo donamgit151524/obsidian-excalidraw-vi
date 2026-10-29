@@ -1,3 +1,4 @@
+import { t } from "src/lang/helpers";
 import {
   arrayBufferToBase64,
   base64ToArrayBuffer,
@@ -2224,9 +2225,9 @@ const requestAI = async (
   }
 
   if (!activeApiKey) {
-    new Notice("AI API key is not set. Please set it in plugin settings.");
+    new Notice(t("UI_EXTRA_041"));
     return createSyntheticResponse(
-      "AI API key is not set. Please set it in plugin settings.",
+      t("UI_EXTRA_041"),
       401,
     );
   }

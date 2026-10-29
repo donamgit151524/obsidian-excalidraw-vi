@@ -72,8 +72,8 @@ async function getSavePath(defaultPath: string): Promise<string | undefined> {
   const result = await window.electron.remote.dialog.showSaveDialog({
     defaultPath,
     filters: [
-      { name: "PDF Files", extensions: ["pdf"] },
-      { name: "All Files", extensions: ["*"] },
+      { name: t("UI_EXTRA_077"), extensions: ["pdf"] },
+      { name: t("UI_EXTRA_078"), extensions: ["*"] },
     ],
     properties: ["showOverwriteConfirmation"],
   });

@@ -1283,7 +1283,7 @@ function RenderObsidianView({
             (el: ExcalidrawElement) => el.id === element.id,
           )[0] as ExcalidrawEmbeddableElement;
         if (!el || el.angle !== 0) {
-          new Notice("Sorry, cannot edit rotated Markdown documents");
+          new Notice(t("UI_EXTRA_045"));
           return;
         }
         const modes = leafRef.current.leaf.view.modes;

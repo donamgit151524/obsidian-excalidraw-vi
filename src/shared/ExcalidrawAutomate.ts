@@ -1,6 +1,4 @@
 import type React from "react";
-import { prepareLucideIcon } from "./lucideIcons";
-import type { LucideIconOptions, LucideIconResult } from "src/types/lucideTypes";
 import ExcalidrawPlugin from "src/core/main";
 import LZString from "lz-string";
 import type { ExcalidrawCLIRequest, ExcalidrawCLIResult } from "src/types/excalidrawCliTypes";
@@ -5461,51 +5459,20 @@ export class ExcalidrawAutomate {
   }
 
   /**
-   * Appends editable SVG geometry to this workbench synchronously. Does not insert
-   * into a view or save. Fatal errors leave existing workbench elements untouched;
-   * supported portions of limited SVG features import with a diagnostic notice.
+   * Imports an SVG string into ExcalidrawAutomate elements.
    * @param {string} svgString - The SVG string to import.
-   * @returns True for a completed conversion (including a transparent/empty SVG),
-   * false for malformed, unsafe or excessive input. See the SVG converter support
-   * matrix for approximations and deliberately omitted unsupported features.
+   * @returns {boolean} True if the import was successful, false otherwise.
    */
   importSVG(svgString: string): boolean {
     const res: ConversionResult = svgToExcalidraw(svgString);
     if (res.hasErrors) {
-      new Notice(`${t("SVG_IMPORT_ERROR")}\n${res.errors}`);
+      new Notice(
+        t("UI_DYNAMIC_011").replace("{0}", String(res.errors)),
+      );
       return false;
     }
     this.copyViewElementsToEAforEditing(res.content);
-    if (res.warnings.length) {
-      const messages = {
-        compositing: "SVG_IMPORT_COMPOSITING",
-        stroke: "SVG_IMPORT_STROKE",
-        unsupported: "SVG_IMPORT_UNSUPPORTED",
-        css: "SVG_IMPORT_CSS",
-        viewport: "SVG_IMPORT_VIEWPORT",
-      } as const;
-      new Notice(`${t("SVG_IMPORT_WARNING")}\n${res.warnings.map(warning => t(messages[warning])).join("\n")}`, 10000);
-    }
     return true;
-  }
-
-  /**
-   * Synchronously appends one installed Lucide icon as grouped editable elements.
-   * Works without a view; never clears, inserts, saves, or changes EA style/images.
-   * Coordinates are the nominal viewport origin; size is its longest side (96 by
-   * default), preserving source aspect ratio/padding. Stroke width scales with size
-   * unless explicitly supplied in final scene units. Color/roughness/opacity default
-   * to this EA's style. Throws before appending on invalid input, empty conversion,
-   * or omitted geometry. Nonfatal native approximations are returned as warning codes.
-   * @returns The canonical name, fresh outer group, every member ID and nominal viewport.
-   */
-  addLucideIcon(options: LucideIconOptions): LucideIconResult {
-    const prepared = prepareLucideIcon(options, {
-      strokeColor: this.style.strokeColor, roughness: this.style.roughness,
-      opacity: this.style.opacity,
-    });
-    this.copyViewElementsToEAforEditing(prepared.elements);
-    return prepared.result;
   }
 
   /**

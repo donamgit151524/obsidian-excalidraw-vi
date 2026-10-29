@@ -42,6 +42,7 @@ import type {
 declare const PLUGIN_VERSION: string;
 
 export interface ExcalidrawSettings {
+  uiLanguage: "vi" | "en";
   showTabTitlebarButtons: boolean;
   copyLinkToElemenetAnchorTo100: boolean;
   copyFrameLinkByName: boolean;
@@ -489,6 +490,7 @@ export const cloneModelConfigs = <TConfig extends AIModelConfig>(
   ) as Record<string, TConfig>;
 
 export const DEFAULT_SETTINGS: ExcalidrawSettings = {
+  uiLanguage: "vi",
   showTabTitlebarButtons: true,
   copyLinkToElemenetAnchorTo100: false,
   copyFrameLinkByName: false,

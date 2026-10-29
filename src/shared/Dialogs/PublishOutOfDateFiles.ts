@@ -118,12 +118,12 @@ export class PublishOutOfDateFilesDialog extends Modal {
   async createForm(recursive: boolean) {
     const detailsEl = this.contentEl.createEl("details");
     detailsEl.createEl("summary", {
-      text: "Video about Obsidian Publish support",
+      text: t("UI_EXTRA_073"),
     });
     detailsEl.createEl("br");
     addYouTubeThumbnail(detailsEl, "JC1E-jeiWhI");
-    const p = this.contentEl.createEl("p", { text: "Collecting data..." });
-    const statusEl = this.contentEl.createEl("p", { text: "Status: " });
+    const p = this.contentEl.createEl("p", { text: t("UI_EXTRA_074") });
+    const statusEl = this.contentEl.createEl("p", { text: t("UI_EXTRA_075") });
     const files = await listOfOutOfSyncImgExports(
       this.plugin,
       recursive,
@@ -132,12 +132,12 @@ export class PublishOutOfDateFilesDialog extends Modal {
     setElementDisplay(statusEl, "none");
 
     if (!files || files.length === 0) {
-      p.innerText = "No out of date files found.";
+      p.innerText = t("UI_EXTRA_080");
       const div = this.contentEl.createDiv({
         cls: "excalidraw-prompt-buttons-div",
       });
       const bClose = div.createEl("button", {
-        text: "Close",
+        text: t("UI_EXTRA_076"),
         cls: "excalidraw-prompt-button",
       });
       bClose.onclick = () => {
@@ -157,7 +157,7 @@ export class PublishOutOfDateFilesDialog extends Modal {
     }
 
     const filesMap = new Map<TFile, boolean>();
-    p.innerText = "Select files to open.";
+    p.innerText = t("UI_EXTRA_087");
     files.forEach((f: TFile) => {
       filesMap.set(f, true);
       new Setting(this.contentEl).setName(f.path).addToggle((toggle) =>
@@ -171,7 +171,7 @@ export class PublishOutOfDateFilesDialog extends Modal {
       cls: "excalidraw-prompt-buttons-div",
     });
     const bClose = div.createEl("button", {
-      text: "Close",
+      text: t("UI_EXTRA_076"),
       cls: "excalidraw-prompt-button",
     });
     bClose.onclick = () => {

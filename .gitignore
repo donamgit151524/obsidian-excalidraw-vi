@@ -28,3 +28,8 @@ yarn.lock
 Obsidian
 
 repository.zip
+local-backup/
+baseline-lint.json
+current-lint.json
+*.log
+

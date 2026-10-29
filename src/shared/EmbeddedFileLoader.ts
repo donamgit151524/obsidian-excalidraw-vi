@@ -641,7 +641,7 @@ export class EmbeddedFile {
     this.linkParts = getLinkParts(imgPath);
     this.hostPath = hostPath;
     if (!this.linkParts.path) {
-      new Notice(`Excalidraw Error\nIncorrect embedded filename: ${imgPath}`);
+      new Notice(t("UI_DYNAMIC_008").replace("{0}", String(imgPath)));
       return;
     }
     if (!this.linkParts.width) {
@@ -657,7 +657,7 @@ export class EmbeddedFile {
     if (!this.file) {
       if (this.attemptCounter++ === 0) {
         new Notice(
-          `Excalidraw Warning: could not find image file: ${imgPath}`,
+          t("UI_DYNAMIC_009").replace("{0}", String(imgPath)),
           5000,
         );
       }
@@ -804,8 +804,6 @@ export class EmbeddedFilesLoader {
   public terminate = false;
   public terminalState: EmbeddedFilesLoaderTerminalState = "idle";
   public uid: string;
-  /** Request-local export guard. Its presence also bypasses stat-keyed rendition caches. */
-  public beforeFileRead?: (file: TFile) => Promise<void>;
 
   constructor(plugin: ExcalidrawPlugin, isDark?: boolean) {
     this.plugin = plugin;
@@ -932,7 +930,6 @@ export class EmbeddedFilesLoader {
       inFile instanceof EmbeddedFile ? inFile.colorMap : null,
     );
     const shouldUseCache =
-      !this.beforeFileRead &&
       !bypassCache &&
       !hasColorMap &&
       this.plugin.settings.allowImageCacheInScene &&
@@ -1162,16 +1159,9 @@ export class EmbeddedFilesLoader {
         inFile instanceof EmbeddedFile ? inFile.isMarkdownSection : false;
       const hyperlink = inFile instanceof EmbeddedFile ? inFile.hyperlink : "";
       const file: TFile = inFile instanceof EmbeddedFile ? inFile.file : inFile;
-      if (this.beforeFileRead) {
-        // Remote/local-machine sources cannot participate in a Vault snapshot.
-        // Let the CLI refuse them rather than claim a current disk artifact.
-        if (isHyperLink || isLocalLink || !file) throw new Error("Export source is not a local Vault file.");
-        await this.beforeFileRead(file);
-        if (this.terminate) return null;
-      }
       if (file && markdownRendererRecursionWatcthdog.has(file)) {
         new Notice(
-          `Loading of ${file.path}. Please check if there is an inifinite loop of one file embedded in the other.`,
+          t("UI_DYNAMIC_010").replace("{0}", String(file.path)),
         );
         return null;
       }
@@ -1576,7 +1566,7 @@ export class EmbeddedFilesLoader {
             if (loader.terminate) {
               return;
             }
-            const shouldForceReload = !!loader.beforeFileRead || forceReloadFileIDs?.has(id);
+            const shouldForceReload = forceReloadFileIDs?.has(id);
             const deferredValidation = deferredCacheValidation?.get(id);
             if (
               cacheValidation === "validated" &&
@@ -1810,7 +1800,6 @@ export class EmbeddedFilesLoader {
           excalidrawData.scene.elements,
         );
         for (const element of mermaidElements) {
-          if (fileIDWhiteList && !fileIDWhiteList.has(element.fileId)) continue;
           yield createSafeLoadTask(
             async () => {
               if (loader.terminate) {
@@ -2129,7 +2118,7 @@ export class EmbeddedFilesLoader {
       const requestedScale =
         options?.pdfScale ?? this.plugin.settings.pdfScale;
       const shouldUseCache =
-        !this.beforeFileRead && !options?.bypassCache &&
+        !options?.bypassCache &&
         getImageCache().isReady() &&
         (!options || this.plugin.settings.allowImageCacheInScene);
       const cacheKey: ImageKey = {

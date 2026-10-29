@@ -1,0 +1,18 @@
+{
+  "Converted {0} files.": "Đã chuyển đổi {0} tệp.",
+  "Startup script not found: {0}": "Không tìm thấy tập lệnh khởi động: {0}",
+  "Error running startup script: {0}": "Lỗi chạy tập lệnh khởi động: {0}",
+  "Can't load image\n\n{0}": "Không nạp được ảnh\n\n{0}",
+  "Exported library to {0}": "Đã xuất thư viện vào {0}",
+  "File rename failed. A file with this name already exists.\n{0}": "Không đổi tên được tệp. Đã có tệp trùng tên.\n{0}",
+  "File rename failed. {0}": "Không đổi tên được tệp. {0}",
+  "Excalidraw Error\nIncorrect embedded filename: {0}": "Lỗi Excalidraw\nTên tệp nhúng không hợp lệ: {0}",
+  "Excalidraw Warning: could not find image file: {0}": "Cảnh báo Excalidraw: không tìm thấy tệp ảnh: {0}",
+  "Loading of {0}. Please check if there is an inifinite loop of one file embedded in the other.": "Đang nạp {0}. Hãy kiểm tra xem các tệp có nhúng lẫn nhau thành vòng lặp vô hạn hay không.",
+  "There were errors while parsing the given SVG:\n{0}": "Đã xảy ra lỗi khi phân tích SVG:\n{0}",
+  "I placed the recognized text onto the system clipboard{0}.": "Đã đưa văn bản được nhận dạng vào bảng tạm hệ thống{0}.",
+  "The folder cannot be created because it already exists as a file: {0}.": "Không thể tạo thư mục vì đường dẫn đã tồn tại dưới dạng tệp: {0}.",
+  "Error loading drawing:\n{0}{1}\n\nTry manually fixing the file or restoring an earlier version from sync history.": "Lỗi nạp bản vẽ:\n{0}{1}\n\nHãy thử sửa tệp thủ công hoặc khôi phục phiên bản trước từ lịch sử đồng bộ.",
+  "Unexpected error: {0}": "Lỗi ngoài dự kiến: {0}",
+  "Exported to {0}": "Đã xuất vào {0}"
+}

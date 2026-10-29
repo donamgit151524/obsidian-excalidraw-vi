@@ -1,3 +1,4 @@
+import { t } from "src/lang/helpers";
 import { DataURL } from "@zsviczian/excalidraw/types/excalidraw/types";
 import {
   App,
@@ -188,7 +189,7 @@ export async function checkAndCreateFolder(
   }
   if (folder && folder instanceof TFile) {
     new Notice(
-      `The folder cannot be created because it already exists as a file: ${folderpath}.`,
+      t("UI_DYNAMIC_013").replace("{0}", String(folderpath)),
     );
   }
   return await vault.createFolder(folderpath);

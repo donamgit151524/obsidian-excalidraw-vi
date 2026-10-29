@@ -1,0 +1,758 @@
+[
+  {
+    "file": "src\\constants\\actionIcons.tsx",
+    "line": 583,
+    "text": "Apprentice of Sketchnoting",
+    "start": 25094,
+    "end": 25122
+  },
+  {
+    "file": "src\\constants\\actionIcons.tsx",
+    "line": 590,
+    "text": "Champion of Spatial Thinking",
+    "start": 25260,
+    "end": 25290
+  },
+  {
+    "file": "src\\constants\\actionIcons.tsx",
+    "line": 597,
+    "text": "Hero of Visual Notetaking",
+    "start": 25426,
+    "end": 25453
+  },
+  {
+    "file": "src\\constants\\actionIcons.tsx",
+    "line": 604,
+    "text": "Legend of Visual Thinking",
+    "start": 25590,
+    "end": 25617
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 314,
+    "text": "excalidraw-plugin",
+    "start": 8950,
+    "end": 8969
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 316,
+    "text": "excalidraw-export-transparent",
+    "start": 9044,
+    "end": 9075
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 320,
+    "text": "excalidraw-mask",
+    "start": 9147,
+    "end": 9164
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 322,
+    "text": "excalidraw-export-dark",
+    "start": 9236,
+    "end": 9260
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 327,
+    "text": "excalidraw-export-svgpadding",
+    "start": 9352,
+    "end": 9382
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 332,
+    "text": "excalidraw-export-padding",
+    "start": 9468,
+    "end": 9495
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 337,
+    "text": "excalidraw-export-pngscale",
+    "start": 9583,
+    "end": 9611
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 342,
+    "text": "excalidraw-export-embed-scene",
+    "start": 9702,
+    "end": 9733
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 347,
+    "text": "excalidraw-export-internal-links",
+    "start": 9829,
+    "end": 9863
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 352,
+    "text": "excalidraw-link-prefix",
+    "start": 9949,
+    "end": 9973
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 357,
+    "text": "excalidraw-url-prefix",
+    "start": 10054,
+    "end": 10077
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 362,
+    "text": "excalidraw-link-brackets",
+    "start": 10161,
+    "end": 10187
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 367,
+    "text": "excalidraw-onload-script",
+    "start": 10275,
+    "end": 10301
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 372,
+    "text": "excalidraw-linkbutton-opacity",
+    "start": 10390,
+    "end": 10421
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 377,
+    "text": "excalidraw-default-mode",
+    "start": 10506,
+    "end": 10531
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 381,
+    "text": "excalidraw-font",
+    "start": 10599,
+    "end": 10616
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 383,
+    "text": "excalidraw-font-color",
+    "start": 10683,
+    "end": 10706
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 388,
+    "text": "excalidraw-border-color",
+    "start": 10789,
+    "end": 10814
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 392,
+    "text": "excalidraw-css",
+    "start": 10886,
+    "end": 10902
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 394,
+    "text": "excalidraw-autoexport",
+    "start": 10967,
+    "end": 10990
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 399,
+    "text": "excalidraw-iframe-theme",
+    "start": 11073,
+    "end": 11098
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 404,
+    "text": "excalidraw-embeddable-theme",
+    "start": 11184,
+    "end": 11213
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 409,
+    "text": "excalidraw-open-md",
+    "start": 11300,
+    "end": 11320
+  },
+  {
+    "file": "src\\constants\\constants.ts",
+    "line": 414,
+    "text": "excalidraw-embed-md",
+    "start": 11412,
+    "end": 11433
+  },
+  {
+    "file": "src\\constants\\emptydrawing.ts",
+    "line": 78,
+    "text": "PLACEHOLDER",
+    "start": 1756,
+    "end": 1769
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 17,
+    "text": "Discover commands and the authoring workflow",
+    "start": 919,
+    "end": 965
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 18,
+    "text": "Inspect readiness and available runtime capabilities",
+    "start": 1020,
+    "end": 1074
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 19,
+    "text": "Inspect one command's fields and side effects",
+    "start": 1129,
+    "end": 1176
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 20,
+    "text": "Search EA documentation or the supported installed Lib reference",
+    "start": 1277,
+    "end": 1343
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 20,
+    "text": "Exact method name",
+    "start": 1393,
+    "end": 1412
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 20,
+    "text": "addText",
+    "start": 1482,
+    "end": 1491
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 21,
+    "text": "List drawing paths without opening them",
+    "start": 1521,
+    "end": 1562
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 22,
+    "text": "Read an explicit live or disk drawing; no base64 asset bodies",
+    "start": 1668,
+    "end": 1731
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 23,
+    "text": "Explicitly open a ready Excalidraw view; normal drawing scripts can run",
+    "start": 2000,
+    "end": 2073
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 24,
+    "text": "Create an exact new path using EA's serializer; never overwrite",
+    "start": 2176,
+    "end": 2241
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 24,
+    "text": "Start",
+    "start": 2578,
+    "end": 2585
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 25,
+    "text": "Apply one bounded edit to an explicit live revision and report its save outcome",
+    "start": 2621,
+    "end": 2702
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 26,
+    "text": "Render SVG/PNG to an explicit vault path; existing remote assets may use normal network permissions",
+    "start": 3115,
+    "end": 3216
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 27,
+    "text": "Run an explicitly trusted local EA script once; arbitrary code is not transactional or sandboxed",
+    "start": 3684,
+    "end": 3782
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 28,
+    "text": "Return offline portable agent instructions without installing them",
+    "start": 4107,
+    "end": 4175
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 29,
+    "text": "Look up a session-only operation receipt after a client timeout",
+    "start": 4306,
+    "end": 4371
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 41,
+    "text": "convertToExcalidrawElements",
+    "start": 5092,
+    "end": 5121
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 41,
+    "text": "Construct a batch with labels, bindings and frames. It is not an existing-scene patcher.",
+    "start": 5206,
+    "end": 5296
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 42,
+    "text": "getCommonBounds",
+    "start": 5311,
+    "end": 5328
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 42,
+    "text": "Return [minX,minY,maxX,maxY].",
+    "start": 5383,
+    "end": 5414
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 43,
+    "text": "mutateElement",
+    "start": 5429,
+    "end": 5444
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 43,
+    "text": "Maintain element versions/nonces when mutating an EA workbench copy.",
+    "start": 5518,
+    "end": 5588
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 44,
+    "text": "exportToSvg",
+    "start": 5603,
+    "end": 5616
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 44,
+    "text": "Low-level SVG export; prefer the CLI export action for Obsidian assets.",
+    "start": 5686,
+    "end": 5759
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 45,
+    "text": "exportToBlob",
+    "start": 5774,
+    "end": 5788
+  },
+  {
+    "file": "src\\core\\cli\\cliCommands.ts",
+    "line": 45,
+    "text": "Low-level raster export; prefer CLI export for Obsidian assets.",
+    "start": 5869,
+    "end": 5934
+  },
+  {
+    "file": "src\\core\\index.ts",
+    "line": 30,
+    "text": "Excalidraw not available",
+    "start": 1208,
+    "end": 1234
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1937,
+    "text": "Very frequent (every 15 seconds)",
+    "start": 67308,
+    "end": 67342
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1938,
+    "text": "Frequent (every 30 seconds)",
+    "start": 67382,
+    "end": 67411
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1939,
+    "text": "Moderate (every 60 seconds)",
+    "start": 67451,
+    "end": 67480
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1940,
+    "text": "Rare (every 5 minutes)",
+    "start": 67521,
+    "end": 67545
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1941,
+    "text": "Practically never (every 15 minutes)",
+    "start": 67586,
+    "end": 67624
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1954,
+    "text": "Very frequent (every 10 seconds)",
+    "start": 68019,
+    "end": 68053
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1955,
+    "text": "Frequent (every 20 seconds)",
+    "start": 68093,
+    "end": 68122
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1956,
+    "text": "Moderate (every 30 seconds)",
+    "start": 68162,
+    "end": 68191
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1957,
+    "text": "Rare (every 1 minute)",
+    "start": 68231,
+    "end": 68254
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 1958,
+    "text": "Practically never (every 5 minutes)",
+    "start": 68295,
+    "end": 68332
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 2029,
+    "text": "YYYY-MM-DD HH.mm.ss",
+    "start": 70631,
+    "end": 70652
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 4610,
+    "text": "Enter a number e.g. 500",
+    "start": 158905,
+    "end": 158930
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 4618,
+    "text": "Enter a number e.g. 800",
+    "start": 159255,
+    "end": 159280
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 4632,
+    "text": "Enter a number e.g. 500",
+    "start": 159821,
+    "end": 159846
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 4639,
+    "text": "Enter a number e.g. 800",
+    "start": 160099,
+    "end": 160124
+  },
+  {
+    "file": "src\\core\\settings.ts",
+    "line": 4869,
+    "text": "e.g.: preamble.sty",
+    "start": 167741,
+    "end": 167761
+  },
+  {
+    "file": "src\\shared\\components\\ContentSearcher.ts",
+    "line": 39,
+    "text": "Find...",
+    "start": 1343,
+    "end": 1352
+  },
+  {
+    "file": "src\\shared\\Dialogs\\FloatingModal.ts",
+    "line": 267,
+    "text": "Failed to release modal scope",
+    "start": 8470,
+    "end": 8501
+  },
+  {
+    "file": "src\\shared\\Dialogs\\FloatingModal.ts",
+    "line": 351,
+    "text": "Failed to restore focus to previous element",
+    "start": 11348,
+    "end": 11393
+  },
+  {
+    "file": "src\\shared\\Dialogs\\PublishOutOfDateFiles.ts",
+    "line": 121,
+    "text": "Video about Obsidian Publish support",
+    "start": 3344,
+    "end": 3382
+  },
+  {
+    "file": "src\\shared\\Dialogs\\PublishOutOfDateFiles.ts",
+    "line": 125,
+    "text": "Collecting data...",
+    "start": 3528,
+    "end": 3548
+  },
+  {
+    "file": "src\\shared\\Dialogs\\PublishOutOfDateFiles.ts",
+    "line": 126,
+    "text": "Status: ",
+    "start": 3612,
+    "end": 3622
+  },
+  {
+    "file": "src\\shared\\Dialogs\\PublishOutOfDateFiles.ts",
+    "line": 140,
+    "text": "Close",
+    "start": 4045,
+    "end": 4052
+  },
+  {
+    "file": "src\\shared\\Dialogs\\PublishOutOfDateFiles.ts",
+    "line": 174,
+    "text": "Close",
+    "start": 5018,
+    "end": 5025
+  },
+  {
+    "file": "src\\shared\\Dialogs\\RankMessage.ts",
+    "line": 56,
+    "text": "Close",
+    "start": 7611,
+    "end": 7618
+  },
+  {
+    "file": "src\\shared\\Dialogs\\ReleaseNotes.ts",
+    "line": 94,
+    "text": "Close",
+    "start": 2859,
+    "end": 2866
+  },
+  {
+    "file": "src\\shared\\EmbeddedFileLoader.ts",
+    "line": 2628,
+    "text": "Non-fatal: proceed with whatever state MathJax left the DOM in.",
+    "start": 87266,
+    "end": 87331
+  },
+  {
+    "file": "src\\shared\\ExcalidrawData.ts",
+    "line": 669,
+    "text": "unexpected error in initializeNonInitializedFields",
+    "start": 22915,
+    "end": 22967
+  },
+  {
+    "file": "src\\shared\\ExcalidrawData.ts",
+    "line": 726,
+    "text": "unexpected error in loadData",
+    "start": 25080,
+    "end": 25110
+  },
+  {
+    "file": "src\\shared\\Scripts.ts",
+    "line": 1284,
+    "text": "unexpected error in suggester",
+    "start": 41225,
+    "end": 41256
+  },
+  {
+    "file": "src\\shared\\Suggesters\\SuggestionModal.ts",
+    "line": 112,
+    "text": "offset",
+    "start": 3533,
+    "end": 3541
+  },
+  {
+    "file": "src\\shared\\Suggesters\\SuggestionModal.ts",
+    "line": 113,
+    "text": "flip",
+    "start": 3594,
+    "end": 3600
+  },
+  {
+    "file": "src\\shared\\Suggesters\\SuggestionModal.ts",
+    "line": 115,
+    "text": "preventOverflow",
+    "start": 3678,
+    "end": 3695
+  },
+  {
+    "file": "src\\utils\\AIUtils.ts",
+    "line": 1961,
+    "text": "model",
+    "start": 53922,
+    "end": 53929
+  },
+  {
+    "file": "src\\utils\\AIUtils.ts",
+    "line": 1964,
+    "text": "prompt",
+    "start": 54046,
+    "end": 54054
+  },
+  {
+    "file": "src\\utils\\AIUtils.ts",
+    "line": 1968,
+    "text": "size",
+    "start": 54189,
+    "end": 54195
+  },
+  {
+    "file": "src\\utils\\AIUtils.ts",
+    "line": 1980,
+    "text": "quality",
+    "start": 54579,
+    "end": 54588
+  },
+  {
+    "file": "src\\utils\\AIUtils.ts",
+    "line": 2000,
+    "text": "image",
+    "start": 55106,
+    "end": 55113
+  },
+  {
+    "file": "src\\utils\\AIUtils.ts",
+    "line": 2016,
+    "text": "mask",
+    "start": 55570,
+    "end": 55576
+  },
+  {
+    "file": "src\\utils\\dynamicStyling.ts",
+    "line": 316,
+    "text": "Dynamic styling deferred update failed",
+    "start": 11233,
+    "end": 11273
+  },
+  {
+    "file": "src\\utils\\dynamicStyling.ts",
+    "line": 329,
+    "text": "Dynamic styling failed",
+    "start": 11529,
+    "end": 11553
+  },
+  {
+    "file": "src\\utils\\excalidrawAutomateUtils.ts",
+    "line": 168,
+    "text": "targetView not set, or no longer active. Use setView before calling this function",
+    "start": 4504,
+    "end": 4587
+  },
+  {
+    "file": "src\\utils\\excalidrawAutomateUtils.ts",
+    "line": 175,
+    "text": "this function is not available on Obsidian Mobile",
+    "start": 4739,
+    "end": 4790
+  },
+  {
+    "file": "src\\utils\\excalidrawViewHelpers.ts",
+    "line": 73,
+    "text": "LaTeX Insertion aborted",
+    "start": 2374,
+    "end": 2399
+  },
+  {
+    "file": "src\\utils\\exportUtils.ts",
+    "line": 75,
+    "text": "PDF Files",
+    "start": 2240,
+    "end": 2251
+  },
+  {
+    "file": "src\\utils\\exportUtils.ts",
+    "line": 76,
+    "text": "All Files",
+    "start": 2291,
+    "end": 2302
+  },
+  {
+    "file": "src\\utils\\fileUtils.ts",
+    "line": 261,
+    "text": "unexpected error in getFileFromURL",
+    "start": 8057,
+    "end": 8093
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 4215,
+    "text": "The installed Excalidraw runtime cannot pace migration files",
+    "start": 147220,
+    "end": 147282
+  },
+  {
+    "file": "src\\view\\ExcalidrawView.ts",
+    "line": 5948,
+    "text": "ea.onCanvasColorChangeHook exception",
+    "start": 202977,
+    "end": 203015
+  },
+  {
+    "file": "src\\view\\managers\\ViewLinkNavigationManager.ts",
+    "line": 498,
+    "text": "ttd",
+    "start": 17239,
+    "end": 17244
+  },
+  {
+    "file": "src\\view\\sidepanel\\Sidepanel.ts",
+    "line": 176,
+    "text": "Close sidepanel tab",
+    "start": 6499,
+    "end": 6520
+  },
+  {
+    "file": "src\\view\\sidepanel\\Sidepanel.ts",
+    "line": 265,
+    "text": "unknown",
+    "start": 9603,
+    "end": 9612
+  }
+]

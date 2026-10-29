@@ -1,3 +1,4 @@
+import { t } from "src/lang/helpers";
 import { App, Component, MarkdownRenderer, Modal } from "obsidian";
 import { Rank, SwordColors } from "src/constants/actionIcons";
 import { convertSVGStringToElement } from "src/utils/utils";
@@ -22,7 +23,7 @@ export class RankMessage extends Modal {
     this.renderComponent.load();
     //this.contentEl.classList.add("excalidraw-release");
     this.containerEl.classList.add("excalidraw-release");
-    this.titleEl.setText("Congratulations, glorious knight!");
+    this.titleEl.setText(t("UI_EXTRA_037"));
     void this.createForm();
   }
 
@@ -53,7 +54,7 @@ export class RankMessage extends Modal {
       //files manually follow one of two options:
 
       setStyle(el, { textAlign: "right" });
-      const bOk = el.createEl("button", { text: "Close" });
+      const bOk = el.createEl("button", { text: t("UI_EXTRA_076") });
       bOk.onclick = () => this.close();
     });
   }

@@ -34,7 +34,7 @@ import { ImportSVGDialog } from "../../shared/Dialogs/ImportSVGDialog";
 import { InsertMDDialog } from "../../shared/Dialogs/InsertMDDialog";
 import { ExcalidrawAutomate } from "../../shared/ExcalidrawAutomate";
 import { search } from "src/utils/excalidrawAutomateUtils";
-import { selectDrawingTemplate } from "../../shared/Dialogs/TemplatePrompt";
+import { templatePromt } from "../../shared/Dialogs/Prompt";
 import { t } from "../../lang/helpers";
 import {
   createOrOverwriteFile,
@@ -151,7 +151,7 @@ export class CommandManager {
       this.taskbone = new Taskbone(this.plugin);
       this.registerCommands();
     } catch (e) {
-      new Notice("Error registering commands", 6000);
+      new Notice(t("UI_EXTRA_015"), 6000);
       console.error("Error registering commands", e);
     }
     this.plugin.logStartupEvent("Commands registered");
@@ -313,7 +313,7 @@ export class CommandManager {
           const decompressed = decompress(compressed[0]);
           if (!decompressed) {
             new Notice(
-              "The compressed string is corrupted. Unable to decompress data.",
+              t("UI_EXTRA_016"),
             );
             return;
           }
@@ -359,7 +359,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("Select a single embeddable element and try again");
+          new Notice(t("UI_EXTRA_017"));
           return false;
         }
         if (checking) {
@@ -401,7 +401,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("Select at least one embeddable element and try again");
+          new Notice(t("UI_EXTRA_018"));
           return false;
         }
         if (checking) {
@@ -548,12 +548,6 @@ export class CommandManager {
     });
 
     this.addCommand({
-      id: "insert-lucide-icon",
-      name: t("INSERT_LUCIDE_ICON"),
-      callback: () => { void this.plugin.lucidePicker.open(this.plugin.activeExcalidrawView); },
-    });
-
-    this.addCommand({
       id: "excalidraw-open",
       name: t("OPEN_EXISTING_NEW_PANE"),
       callback: () => {
@@ -658,8 +652,6 @@ export class CommandManager {
         activeView.file.basename,
         this.settings,
       );
-      const prepared = await this.plugin.prepareDrawing();
-      if (prepared.kind === "cancel") return;
       const folder = this.settings.embedUseExcalidrawFolder
         ? null
         : (
@@ -669,7 +661,7 @@ export class CommandManager {
               filename,
             )
           ).folder;
-      const file = await this.plugin.createDrawing(filename, folder, prepared.data);
+      const file = await this.plugin.createDrawing(filename, folder);
       await this.plugin.embedDrawing(file);
       this.plugin.openDrawing(file, location, true, undefined, true);
     };
@@ -1307,7 +1299,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("Select a single image element and try again");
+          new Notice(t("UI_EXTRA_019"));
           return false;
         }
         const el = els[0];
@@ -1372,7 +1364,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("Select a single image element and try again");
+          new Notice(t("UI_EXTRA_019"));
           return false;
         }
         if (checking) {
@@ -1384,7 +1376,7 @@ export class CommandManager {
           const ef = view.excalidrawData.getFile(el.fileId);
           if (!ef) {
             await view.forceSave();
-            new Notice("Select a single image element and try again");
+            new Notice(t("UI_EXTRA_019"));
             return false;
           }
 
@@ -1427,7 +1419,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("Select a single image element and try again");
+          new Notice(t("UI_EXTRA_019"));
           return false;
         }
         if (checking) {
@@ -1439,7 +1431,7 @@ export class CommandManager {
           const ef = view.excalidrawData.getFile(el.fileId);
           if (!ef) {
             await view.forceSave();
-            new Notice("Select a single image element and try again");
+            new Notice(t("UI_EXTRA_019"));
             return false;
           }
 
@@ -1470,7 +1462,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("Select a single image element and try again");
+          new Notice(t("UI_EXTRA_019"));
           return false;
         }
         if (checking) {
@@ -1482,7 +1474,7 @@ export class CommandManager {
         const eq = view.excalidrawData.getEquation(el.fileId);
         if (!ef && !eq) {
           void view.forceSave();
-          new Notice("Please try again.");
+          new Notice(t("UI_EXTRA_020"));
           return false;
         }
 
@@ -1513,7 +1505,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("Select a single back-of-the-note card and try again");
+          new Notice(t("UI_EXTRA_021"));
           return false;
         }
         const embeddableData = view.getEmbeddableLeafElementById(els[0].id);
@@ -1522,7 +1514,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("The selected embeddable is not a back-of-the-note card.");
+          new Notice(t("UI_EXTRA_022"));
           return false;
         }
         if (checking) {
@@ -1548,7 +1540,7 @@ export class CommandManager {
           if (checking) {
             return false;
           }
-          new Notice("Select a single PDF embeddable and try again");
+          new Notice(t("UI_EXTRA_023"));
           return false;
         }
         const isPDF =
@@ -1674,7 +1666,7 @@ export class CommandManager {
               return false;
             }
             new Notice(
-              "Select a single image element or single PDF embeddable and try again",
+              t("UI_EXTRA_024"),
             );
             return false;
           }
@@ -1718,7 +1710,7 @@ export class CommandManager {
               await sleep(500);
               ef = excalidrawView.excalidrawData.getFile(imageEl.fileId);
               if (!ef) {
-                new Notice("Select a single image element and try again");
+                new Notice(t("UI_EXTRA_019"));
                 return false;
               }
             }
@@ -1748,7 +1740,7 @@ export class CommandManager {
             false,
           );
           if (!imageID) {
-            new Notice(`Can't load image\n\n${imageURL}`);
+            new Notice(t("UI_DYNAMIC_004").replace("{0}", String(imageURL)));
             return;
           }
 
@@ -2005,7 +1997,7 @@ export class CommandManager {
             false,
           );
           if (!imageID) {
-            new Notice(`Can't load image\n\n${imageURL}`);
+            new Notice(t("UI_DYNAMIC_004").replace("{0}", String(imageURL)));
             ea.destroy();
             return;
           }
@@ -2025,9 +2017,7 @@ export class CommandManager {
           let template: TFile;
           const templates = getListOfTemplateFiles(this.plugin);
           if (templates) {
-            const selection = await selectDrawingTemplate(templates, this.app, normalizePath(this.settings.templateFilePath));
-            if (selection.kind === "cancel") { ea.destroy(); return; }
-            if (selection.kind === "template") template = selection.file;
+            template = await templatePromt(templates, this.app);
           }
 
           const { folderpath, filename } = await getAnnotationFileNameAndFolder(
@@ -2555,10 +2545,8 @@ export class CommandManager {
         }
 
         void (async () => {
-          const prepared = await this.plugin.prepareDrawing();
-          if (prepared.kind === "cancel") return;
           await activeView.save();
-          const template = prepared.data;
+          const template = await this.plugin.getBlankDrawing();
           const target = await this.app.vault.read(activeFile);
           const mergedTarget = mergeMarkdownFiles(template, target);
           await createOrOverwriteFile(this.app, activeFile.path, mergedTarget);

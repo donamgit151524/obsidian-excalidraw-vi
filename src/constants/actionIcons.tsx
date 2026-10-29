@@ -3,6 +3,7 @@ import { PenStyle } from "src/types/penTypes";
 import React from "react";
 import { isInstanceOfSVGSVGElement } from "src/utils/typechecks";
 import { BLOCK_REFERENCE_ICON_PATH } from "./blockReferenceIcon";
+import { t } from "src/lang/helpers";
 declare const mainDocument: Document;
 const BLOCKED_SVG_TAGS = new Set([
   "script",
@@ -580,28 +581,28 @@ export const SwordColors = {
     decoration: "#96510d",
     blade: "#7A420B",
     bladeFillLight: "#E1B384",
-    title: "Apprentice of Sketchnoting",
+    get title() { return t("UI_EXTRA_081"); },
   },
   Silver: {
     grip: "#CECDCC",
     decoration: "#b2b0b0",
     blade: "#979595",
     bladeFillLight: "#F5F5F5",
-    title: "Champion of Spatial Thinking",
+    get title() { return t("UI_EXTRA_082"); },
   },
   Gold: {
     grip: "#F5D000",
     decoration: "#D6B600",
     blade: "#B89C00",
     bladeFillLight: "#FFEA70",
-    title: "Hero of Visual Notetaking",
+    get title() { return t("UI_EXTRA_083"); },
   },
   Platinum: {
     grip: "#646261",
     decoration: "#323131",
     blade: "#000",
     bladeFillLight: "#8B8988",
-    title: "Legend of Visual Thinking",
+    get title() { return t("UI_EXTRA_084"); },
   },
 };
 

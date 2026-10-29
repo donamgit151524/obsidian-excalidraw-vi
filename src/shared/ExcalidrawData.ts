@@ -998,6 +998,7 @@ export class ExcalidrawData {
 
     //iterating through all the text elements in .md
     //Text elements always contain the raw value
+    const BLOCKREF_LEN: number = 12; // " ^12345678\n\n".length;
     const RE_TEXT_ELEMENT_LINK =
       /^%%\*\*\*>>>text element-link:(\[\[[^<*\]]*]])<<<\*\*\*%%/gm;
     let res = data.matchAll(/\s\^(.{8})[\n]+/g);
@@ -1049,7 +1050,7 @@ export class ExcalidrawData {
           }
         }
       }
-      position = parts.value.index + parts.value[0].length;
+      position = parts.value.index + BLOCKREF_LEN;
     }
 
     //In theory only non-text elements should be left in the elementLinkMap
@@ -1117,7 +1118,7 @@ export class ExcalidrawData {
       const mermaidElements = getMermaidImageElements(this.scene.elements);
       if (mermaidElements.length > 0 && !shouldRenderMermaid()) {
         new Notice(
-          "Mermaid images are only supported in Obsidian 1.4.14 and above. Please update Obsidian to see the mermaid images in this drawing. Obsidian mobile 1.4.14 currently only avaiable to Obsidian insiders",
+          t("UI_EXTRA_038"),
           5000,
         );
       } else {
@@ -1826,8 +1827,7 @@ export class ExcalidrawData {
       .filter((el) => el.type === "image" && el.crop && !el.isDeleted)
       .forEach((el: Mutable<ExcalidrawImageElement>) => {
         const ef = this.getFile(el.fileId);
-        // Local Markdown images and equations have no file-backed entry.
-        if (!ef?.file) {
+        if (!ef.file) {
           return;
         }
         if (ef.file.extension !== "pdf") {

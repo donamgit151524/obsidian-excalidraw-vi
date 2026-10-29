@@ -36,7 +36,7 @@ export class ContentSearcher {
     );
     this.searchBar = createEl("input", {
       type: "text",
-      placeholder: "Find...",
+      placeholder: t("UI_EXTRA_072"),
     });
     this.hitCount = createDiv("document-search-count");
 

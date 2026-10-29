@@ -126,7 +126,7 @@ export default class Taskbone {
       }
       await window.navigator.clipboard.writeText(text);
       new Notice(
-        `I placed the recognized text onto the system clipboard${addToFrontmatter ? " and to document properties" : ""}.`,
+        t("UI_DYNAMIC_012").replace("{0}", String(addToFrontmatter ? " and to document properties" : "")),
       );
     }
     ea.destroy();
@@ -160,7 +160,7 @@ export default class Taskbone {
 
     if (!content || apiResponse.status !== 200) {
       new Notice(
-        "Something went wrong while processing your request. Please check developer console for more information",
+        t("UI_EXTRA_039"),
       );
       log(apiResponse);
       return;

@@ -1,3 +1,5 @@
+> 🇻🇳 **Bản Việt hóa có lựa chọn Việt/Anh:** xem [hướng dẫn cài và chuyển ngôn ngữ](README.vi.md). Bản tùy chỉnh từ Excalidraw 2.29.0, không phải bản phát hành chính thức.
+
 # Excalidraw
 
 【English | [简体中文](./docs/zh-cn/README.md)】

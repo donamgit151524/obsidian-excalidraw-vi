@@ -173,7 +173,7 @@ export class ExcalidrawSidepanelView extends ItemView {
     });
     this.closeButtonEl = controls.createEl("button", {
       cls: "clickable-icon",
-      attr: { type: "button", "aria-label": "Close sidepanel tab" },
+      attr: { type: "button", "aria-label": t("UI_EXTRA_079") },
     });
     setIcon(this.closeButtonEl, "x");
     this.closeButtonEl.addEventListener("click", () => {
@@ -190,7 +190,7 @@ export class ExcalidrawSidepanelView extends ItemView {
       cls: "excalidraw-sidepanel__empty",
     });
     this.emptyStateEl.setText(
-      "Excalidraw sidepanel is empty. Run a panel-enabled Excalidraw script to add a panel.",
+      t("UI_EXTRA_057"),
     );
     this.selectEl.disabled = true;
     this.closeButtonEl.disabled = true;
@@ -201,7 +201,7 @@ export class ExcalidrawSidepanelView extends ItemView {
     });
     this.resolveReady?.();
     this.resolveReady = null;
-    this.emptyStateEl.setText("Loading Excalidraw…");
+    this.emptyStateEl.setText(t("UI_EXTRA_058"));
     void this.restorePersistedTabs();
     this.updateEmptyStateVisibility();
   }
@@ -521,7 +521,7 @@ export class ExcalidrawSidepanelView extends ItemView {
         this.restoringScriptNames.clear();
         this.backgroundRestoredTabIds.clear();
         this.emptyStateEl?.setText(
-          "Excalidraw sidepanel is empty. Run a panel-enabled Excalidraw script to add a panel.",
+          t("UI_EXTRA_057"),
         );
         this.updateEmptyStateVisibility();
       }

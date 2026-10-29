@@ -7,8 +7,7 @@ function main() {
   console.log('[script-library] Running unified documentation generator (full mode)...');
   const result = runUnifiedGeneration({
     mode: 'full',
-    args: process.argv.slice(2).filter(arg => arg !== '--no-template-sync'),
-    syncTemplate: !process.argv.includes('--no-template-sync'),
+    args: process.argv.slice(2),
   });
   console.log('[script-library] Wrote outputs:', result.generated);
   console.log('[script-library] Processed scripts:', result.scriptsProcessed);
