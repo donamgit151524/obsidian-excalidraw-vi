@@ -2,17 +2,13 @@
 
 Bản tùy chỉnh từ [Excalidraw 2.29.0 của Zsolt Viczian](https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.29.0), giữ nguyên giấy phép MIT. Không phải bản phát hành chính thức của tác giả gốc.
 
-## Cài bằng BRAT
+## Cài đặt
 
-1. Cài và bật BRAT trong Obsidian.
-2. Chọn **BRAT → Add beta plugin** và nhập `donamgit151524/obsidian-excalidraw-vi`.
-3. Cài bản phát hành mới nhất, rồi bật Excalidraw.
-4. Mở **Cài đặt → Excalidraw → Ngôn ngữ plugin / Plugin language**.
-5. Chọn **Tiếng Việt (vi)** hoặc **English (en)**, rồi khởi động lại Obsidian để đổi hết tên lệnh và cửa sổ đang mở.
+Bản cài đã được đưa trực tiếp vào thư mục gốc repository: `main.js`, `styles.css`, `manifest.json`. Tải ba tệp này và chép vào `.obsidian/plugins/obsidian-excalidraw-plugin/`, giữ nguyên `data.json`, rồi khởi động lại Obsidian.
 
-Mặc định là tiếng Việt. Lựa chọn được lưu riêng trong cấu hình Excalidraw và không đổi ngôn ngữ của Obsidian. Có mục chọn ngôn ngữ ở cả giao diện cài đặt tìm kiếm mới và giao diện cài đặt cũ.
+Mở **Cài đặt → Excalidraw → Ngôn ngữ plugin / Plugin language**, chọn **Tiếng Việt (vi)** hoặc **English (en)**. Khởi động lại Obsidian sau khi đổi để cập nhật hết tên lệnh và cửa sổ đang mở. Mặc định là tiếng Việt. Ngôn ngữ được lưu riêng cho plugin, không đổi ngôn ngữ Obsidian. Có lựa chọn ở cả giao diện cài đặt tìm kiếm mới và giao diện cũ.
 
-ID plugin vẫn là `obsidian-excalidraw-plugin`; không cài song song hai bản cùng ID. Có thể chép `main.js`, `styles.css`, `manifest.json` từ Release vào `.obsidian/plugins/obsidian-excalidraw-plugin/`. Giữ tệp `data.json` của bạn. Dùng BRAT để theo dõi bản Việt hóa, vì cập nhật từ danh mục Community plugins có thể ghi đè bằng bản gốc.
+ID plugin vẫn là `obsidian-excalidraw-plugin`; không cài hai bản cùng ID. Cập nhật từ danh mục Community plugins có thể ghi đè bằng bản gốc. **Chưa có GitHub Release, vì vậy chưa thể cài bằng BRAT.** Khi có Release đính kèm đủ ba tệp, có thể dùng BRAT với `donamgit151524/obsidian-excalidraw-vi`.
 
 ## Phạm vi
 
@@ -38,6 +34,6 @@ Ba tệp cài đặt nằm trong `dist/`. `scripts/canvas-locale.mjs` ghép từ
 
 ## English
 
-Vietnamese/English customization of Zsolt Viczian's Excalidraw 2.29.0, licensed under MIT. Install with BRAT using `donamgit151524/obsidian-excalidraw-vi`. Choose **Plugin language → Tiếng Việt (vi) / English (en)** and restart Obsidian to update all command names and open windows. Vietnamese is the default; the Obsidian language is unchanged. Keep your existing `data.json` when replacing the three release files.
+Vietnamese/English customization of Zsolt Viczian's Excalidraw 2.29.0, licensed under MIT. Install the three files from the repository root into your Excalidraw plugin folder. A GitHub Release has not been published, so BRAT installation is not available yet. Choose **Plugin language → Tiếng Việt (vi) / English (en)** and restart Obsidian to update all command names and open windows. Vietnamese is the default; the Obsidian language is unchanged. Keep your existing `data.json` when replacing the three release files.
 
 See the original [README](README.md) for upstream documentation and licensing.
