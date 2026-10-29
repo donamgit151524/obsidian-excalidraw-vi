@@ -116,7 +116,7 @@ if (!isLib) {
   const excalidraw_styles = isProd
     ? fs.readFileSync("./node_modules/@zsviczian/excalidraw/dist/obsidian/excalidraw.production.min.css", "utf8")
     : fs.readFileSync("./node_modules/@zsviczian/excalidraw/dist/obsidian/excalidraw.development.css", "utf8");
-  const plugin_styles = fs.readFileSync("./styles.css", "utf8");
+  const plugin_styles = fs.readFileSync("./src/plugin-styles.css", "utf8");
   const styles = excalidraw_styles + plugin_styles;
   cssnano()
     .process(styles, {

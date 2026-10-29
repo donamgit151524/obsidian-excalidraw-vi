@@ -30,7 +30,7 @@ node scripts/verify-vi.cjs
 npm run build
 ```
 
-Ba tệp cài đặt nằm trong `dist/`. `scripts/canvas-locale.mjs` ghép từ điển tiếng Việt đầy đủ vào payload Excalidraw trong bộ nhớ lúc build; không sửa trực tiếp dependency trong `node_modules`. Mã kiểm tra xác nhận đủ khóa Việt/Anh, biến mẫu, ví dụ mã và chuyển ngôn ngữ qua bộ nạp nén thực tế. Kết quả nằm trong `translation-report.json`.
+Ba tệp cài đặt nằm trong `dist/`. CSS nguồn của plugin nằm ở `src/plugin-styles.css`; `styles.css` ở thư mục gốc là bản cài đã ghép CSS của bảng vẽ. `scripts/canvas-locale.mjs` ghép từ điển tiếng Việt đầy đủ vào payload Excalidraw trong bộ nhớ lúc build; không sửa trực tiếp dependency trong `node_modules`. Mã kiểm tra xác nhận đủ khóa Việt/Anh, biến mẫu, ví dụ mã và chuyển ngôn ngữ qua bộ nạp nén thực tế. Kết quả nằm trong `translation-report.json`.
 
 ## English
 

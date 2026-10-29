@@ -32,4 +32,3 @@ local-backup/
 baseline-lint.json
 current-lint.json
 *.log
-
